@@ -1,0 +1,58 @@
+{
+  "name": "gwinnett",
+  "displayName": "Gwinnett",
+  "description": "A modern, sophisticated knowledge base theme featuring gradient backgrounds, two-column layouts, and premium typography. Inspired by contemporary design patterns with professional aesthetics.",
+  "author": "Kustomer Templates",
+  "version": "1.0.0",
+  "style": "modern-premium",
+  "generated": "2024-12-20T00:00:00.000Z",
+  "structure": {
+    "advanced": ["manifest.json"],
+    "components": [
+      "Page.jsx", "Nav.jsx", "Announcement.jsx", "HeroSection.jsx",
+      "CategoriesSection.jsx", "CategoryCard.jsx", "FeaturedArticles.jsx",
+      "ArticleItem.jsx", "ContactUs.jsx", "Footer.jsx",
+      "ArticleBreadcrumbs.jsx", "ConversationBreadcrumbs.jsx",
+      "SearchHeader.jsx", "PopularTopics.jsx"
+    ],
+    "globals": [
+      "styles.css", "portal.css", "form.css", "survey.css", 
+      "recaptcha.css", "utils.js"
+    ],
+    "pages": [
+      "homepage.jsx", "article.jsx", "categories.jsx", "search.jsx",
+      "contact.jsx", "login.jsx", "conversation.jsx", "conversations.jsx",
+      "survey.jsx", "tag.jsx", "404.jsx", "401.jsx", "500.jsx"
+    ]
+  },
+  "colors": {
+    "primary": "#6366f1",
+    "secondary": "#8b5cf6", 
+    "accent": "#06b6d4",
+    "background": "#ffffff",
+    "text": "#1f2937",
+    "border": "#e5e7eb",
+    "gradient_start": "#667eea",
+    "gradient_end": "#764ba2"
+  },
+  "design_features": {
+    "typography": "Inter font family with modern weight variations",
+    "gradients": "Premium gradient backgrounds throughout",
+    "layout": "Two-column responsive layouts with card-based sections",
+    "animations": "Smooth hover effects and micro-interactions",
+    "spacing": "Generous padding and margins for premium feel"
+  },
+  "features": [
+    "Gradient Background Design",
+    "Two-Column Layout System", 
+    "Modern Typography (Inter)",
+    "Premium Card Components",
+    "Responsive Design",
+    "Accessibility Compliant",
+    "Modern React Components",
+    "Smooth Animations",
+    "Professional Color Palette",
+    "SEO Optimized",
+    "Cross-browser Compatible"
+  ]
+} 

@@ -1,0 +1,62 @@
+{
+  "name": "Professional Knowledge Base",
+  "version": "1.0.0",
+  "description": "A clean, professional knowledge base theme inspired by premium help center templates. Features modern card-based layouts, prominent search functionality, and professional aesthetics perfect for enterprise documentation and support portals.",
+  "author": "Kustomer Templates",
+  "category": "professional",
+  "tags": ["professional", "knowledge-base", "enterprise", "clean", "modern", "cards", "search", "documentation"],
+  "preview_image": "preview.jpg",
+  "features": [
+    "Professional card-based category layouts",
+    "Prominent search functionality",
+    "Clean, modern typography",
+    "Responsive grid system",
+    "Professional color scheme",
+    "Breadcrumb navigation",
+    "Sidebar layouts for articles",
+    "FAQ sections",
+    "Contact support integration",
+    "Enterprise-ready design"
+  ],
+  "color_scheme": {
+    "primary": "#2563eb",
+    "secondary": "#f8fafc",
+    "accent": "#0ea5e9",
+    "text_primary": "#1e293b",
+    "text_secondary": "#64748b",
+    "background": "#ffffff",
+    "border": "#e2e8f0"
+  },
+  "typography": {
+    "font_family": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "headings_weight": "600",
+    "body_weight": "400"
+  },
+  "layout": {
+    "container_max_width": "1200px",
+    "sidebar_enabled": true,
+    "grid_columns": 3,
+    "card_style": "elevated"
+  },
+  "customization": {
+    "supports_dark_mode": false,
+    "color_customizable": true,
+    "typography_customizable": true,
+    "layout_customizable": true
+  },
+  "target_audience": [
+    "Enterprise companies",
+    "SaaS platforms",
+    "Technical documentation sites",
+    "Professional support portals",
+    "B2B knowledge bases"
+  ],
+  "use_cases": [
+    "Product documentation",
+    "API documentation",
+    "Customer support portal",
+    "Internal knowledge base",
+    "FAQ center",
+    "Help desk portal"
+  ]
+} 

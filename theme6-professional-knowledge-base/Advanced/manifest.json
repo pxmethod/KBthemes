@@ -1,0 +1,184 @@
+{
+  "name": "Professional Knowledge Base",
+  "version": "1.0.0",
+  "description": "A clean, professional knowledge base theme inspired by premium help center templates",
+  "author": "Kustomer Templates",
+  "license": "MIT",
+  "homepage": "https://github.com/kustomer/templates",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kustomer/templates.git"
+  },
+  "keywords": [
+    "knowledge-base",
+    "help-center",
+    "documentation",
+    "support",
+    "professional",
+    "enterprise",
+    "react",
+    "responsive"
+  ],
+  "category": "professional",
+  "tags": [
+    "professional",
+    "knowledge-base",
+    "enterprise",
+    "clean",
+    "modern",
+    "cards",
+    "search",
+    "documentation"
+  ],
+  "preview": {
+    "demo_url": "./demo.html",
+    "live_preview_url": "./index.html",
+    "screenshot": "./preview.jpg",
+    "thumbnail": "./thumbnail.jpg"
+  },
+  "theme": {
+    "primary_color": "#2563eb",
+    "secondary_color": "#f8fafc",
+    "accent_color": "#0ea5e9",
+    "text_color": "#1e293b",
+    "background_color": "#ffffff",
+    "font_family": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+  },
+  "features": [
+    "Professional card-based category layouts",
+    "Prominent search functionality with suggestions",
+    "Clean, modern typography optimized for readability",
+    "Responsive grid system for all screen sizes",
+    "Professional color scheme suitable for enterprise",
+    "Breadcrumb navigation for easy site navigation",
+    "Sidebar layouts for article pages",
+    "Comprehensive FAQ sections",
+    "Multiple contact support options",
+    "Enterprise-ready design patterns",
+    "WCAG accessibility compliance",
+    "Performance optimized CSS and components"
+  ],
+  "components": [
+    "Nav",
+    "Footer", 
+    "Page",
+    "SearchHeader",
+    "CategoriesSection",
+    "ArticleCard",
+    "ContactUs"
+  ],
+  "pages": [
+    "homepage.jsx"
+  ],
+  "styles": {
+    "main_stylesheet": "Globals/styles.css",
+    "css_custom_properties": true,
+    "responsive_design": true,
+    "grid_system": true,
+    "utility_classes": true
+  },
+  "browser_support": {
+    "chrome": ">=88",
+    "firefox": ">=85",
+    "safari": ">=14",
+    "edge": ">=88"
+  },
+  "framework_compatibility": {
+    "react": ">=16.8",
+    "vue": "3.x",
+    "angular": "12+",
+    "vanilla_js": true
+  },
+  "customization": {
+    "color_scheme": {
+      "customizable": true,
+      "css_variables": true,
+      "predefined_schemes": 1
+    },
+    "typography": {
+      "customizable": true,
+      "web_fonts": ["Inter"],
+      "fallback_fonts": ["-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "sans-serif"]
+    },
+    "layout": {
+      "responsive": true,
+      "container_width": "1200px",
+      "grid_columns": 3,
+      "sidebar_supported": true
+    }
+  },
+  "accessibility": {
+    "wcag_compliance": "AA",
+    "keyboard_navigation": true,
+    "screen_reader_optimized": true,
+    "focus_indicators": true,
+    "semantic_html": true,
+    "aria_labels": true
+  },
+  "seo": {
+    "semantic_markup": true,
+    "structured_data_ready": true,
+    "meta_tags_optimized": true,
+    "heading_hierarchy": true
+  },
+  "performance": {
+    "css_minification_ready": true,
+    "critical_css_inlined": false,
+    "lazy_loading_ready": true,
+    "web_vitals_optimized": true
+  },
+  "target_audience": [
+    "Enterprise companies",
+    "SaaS platforms", 
+    "Technical documentation sites",
+    "Professional support portals",
+    "B2B knowledge bases",
+    "API documentation sites",
+    "Customer support centers"
+  ],
+  "use_cases": [
+    "Product documentation",
+    "API documentation",
+    "Customer support portal", 
+    "Internal knowledge base",
+    "FAQ center",
+    "Help desk portal",
+    "Technical documentation",
+    "User guides and tutorials"
+  ],
+  "installation": {
+    "requirements": {
+      "node_version": ">=14.0.0",
+      "npm_version": ">=6.0.0"
+    },
+    "dependencies": {
+      "react": "^17.0.0 || ^18.0.0",
+      "react-dom": "^17.0.0 || ^18.0.0"
+    },
+    "dev_dependencies": {},
+    "external_fonts": [
+      "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    ]
+  },
+  "build": {
+    "css_preprocessing": "none",
+    "javascript_bundling": "optional", 
+    "optimization": "manual",
+    "production_ready": true
+  },
+  "documentation": {
+    "readme_included": true,
+    "component_docs": true,
+    "customization_guide": true,
+    "examples_included": true
+  },
+  "support": {
+    "documentation_url": "./README.md",
+    "issues_url": "https://github.com/kustomer/templates/issues",
+    "community_forum": "https://community.kustomer.com",
+    "email_support": "support@kustomer.com"
+  },
+  "created_date": "2024-12-19",
+  "last_updated": "2024-12-19",
+  "schema_version": "1.0"
+} 

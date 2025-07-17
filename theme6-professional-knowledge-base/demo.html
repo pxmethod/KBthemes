@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Knowledge Base Theme - Demo</title>
+    <link rel="stylesheet" href="Globals/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Demo-specific styles */
+        .demo-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--text-white);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-medium);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .demo-section {
+            border-top: 2px solid var(--primary-color);
+            padding-top: var(--spacing-3xl);
+            margin-top: var(--spacing-3xl);
+        }
+        
+        .demo-section:first-child {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        
+        .demo-title {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .demo-description {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .feature-item {
+            background: var(--background-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: var(--font-size-2xl);
+            color: var(--primary-color);
+        }
+        
+        .feature-title {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: var(--line-height-relaxed);
+        }
+        
+        .component-demo {
+            margin-bottom: var(--spacing-4xl);
+        }
+        
+        .component-title {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .component-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-lg);
+        }
+        
+        .sample-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .article-preview {
+            background: var(--background-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            transition: all var(--transition-normal);
+        }
+        
+        .article-preview:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        .article-category {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-medium);
+            background: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .article-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .article-excerpt {
+            color: var(--text-secondary);
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: var(--font-size-sm);
+            color: var(--text-muted);
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .color-item {
+            background: var(--background-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .color-swatch {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius-lg);
+            margin: 0 auto var(--spacing-md);
+            border: 1px solid var(--border-color);
+        }
+        
+        .color-name {
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .color-value {
+            font-size: var(--font-size-sm);
+            color: var(--text-muted);
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+    <script src="Globals/utils.js" defer></script>
+</head>
+<body>
+    <div class="demo-banner">
+        🎯 Professional Knowledge Base Theme - Complete Feature Demo
+    </div>
+
+    <!-- Header Demo -->
+    <header class="kb-header">
+        <div class="kb-container">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="#" class="site-title">Professional Knowledge Base</a>
+                </div>
+                <nav class="header-nav">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">Browse Categories</a>
+                    <a href="#" class="nav-link">Search</a>
+                    <a href="#" class="nav-link">All Articles</a>
+                    <a href="#" class="nav-link">Contact Support</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Search Section Demo -->
+        <div class="demo-section">
+            <section class="search-section">
+                <div class="kb-container">
+                    <h1 class="search-title">How can we help you today?</h1>
+                    <p class="search-subtitle">Search our comprehensive knowledge base for instant answers and detailed guides</p>
+                    
+                    <form class="search-form">
+                        <div class="search-input-wrapper">
+                            <input
+                                type="search"
+                                class="search-input"
+                                placeholder="Search for articles, guides, API docs, and more..."
+                                value="API authentication"
+                            />
+                            <button type="submit" class="search-button">
+                                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div style="margin-top: 2rem; opacity: 0.8;">
+                        <p style="font-size: 0.875rem; margin-bottom: 0.5rem;">Popular searches:</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                            <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.875rem;">Getting Started</a>
+                            <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.875rem;">API Documentation</a>
+                            <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.875rem;">Billing & Pricing</a>
+                            <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.875rem;">Troubleshooting</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Theme Features Overview -->
+        <div class="demo-section">
+            <div class="kb-container">
+                <h2 class="demo-title">Professional Knowledge Base Features</h2>
+                <p class="demo-description">
+                    A comprehensive theme designed for enterprise documentation and support portals, featuring modern card layouts, professional typography, and excellent user experience.
+                </p>
+                
+                <div class="feature-showcase">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3 class="feature-title">Professional Design</h3>
+                        <p class="feature-description">Clean, modern interface with professional color schemes and typography optimized for readability.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3 class="feature-title">Fully Responsive</h3>
+                        <p class="feature-description">Perfect display on all devices with mobile-first design approach and touch-friendly interactions.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🔍</div>
+                        <h3 class="feature-title">Advanced Search</h3>
+                        <p class="feature-description">Prominent search functionality with suggestions and filters to help users find answers quickly.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">🏗️</div>
+                        <h3 class="feature-title">Modular Components</h3>
+                        <p class="feature-description">Reusable React components that can be easily customized and extended for your needs.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">♿</div>
+                        <h3 class="feature-title">Accessibility Ready</h3>
+                        <p class="feature-description">WCAG compliant with proper focus management, keyboard navigation, and screen reader support.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Performance Optimized</h3>
+                        <p class="feature-description">Fast loading times with optimized CSS, minimal JavaScript, and efficient component structure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Section Demo -->
+        <div class="demo-section">
+            <div class="kb-container">
+                <div class="component-demo">
+                    <h3 class="component-title">Category Cards</h3>
+                    <p class="component-description">Professional card-based layout for organizing content categories with hover effects and visual hierarchy.</p>
+                    
+                    <div class="categories-grid">
+                        <div class="category-card">
+                            <div class="category-icon">🚀</div>
+                            <h3 class="category-title">Getting Started</h3>
+                            <p class="category-description">Everything you need to know to get up and running quickly with our platform.</p>
+                            <div class="category-meta">
+                                <span class="article-count">12 articles</span>
+                                <span class="view-all-link">View all →</span>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-icon">⚡</div>
+                            <h3 class="category-title">API Documentation</h3>
+                            <p class="category-description">Comprehensive developer guides, code examples, and API references.</p>
+                            <div class="category-meta">
+                                <span class="article-count">24 articles</span>
+                                <span class="view-all-link">View all →</span>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-icon">🔧</div>
+                            <h3 class="category-title">Technical Support</h3>
+                            <p class="category-description">Troubleshooting guides and solutions for common technical issues.</p>
+                            <div class="category-meta">
+                                <span class="article-count">15 articles</span>
+                                <span class="view-all-link">View all →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article Previews Demo -->
+        <div class="demo-section">
+            <div class="kb-container">
+                <div class="component-demo">
+                    <h3 class="component-title">Article Cards</h3>
+                    <p class="component-description">Clean article preview cards with metadata, categories, and helpful statistics.</p>
+                    
+                    <div class="sample-articles">
+                        <div class="article-preview">
+                            <span class="article-category">Getting Started</span>
+                            <h4 class="article-title">Quick Start Guide: Your First 10 Minutes</h4>
+                            <p class="article-excerpt">Get up and running in just 10 minutes with this essential guide covering account setup, basic configuration, and your first project.</p>
+                            <div class="article-meta">
+                                <span>5 min read</span>
+                                <span>97% helpful</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-preview">
+                            <span class="article-category">API</span>
+                            <h4 class="article-title">API Authentication Best Practices</h4>
+                            <p class="article-excerpt">Learn how to securely authenticate your API calls using tokens, OAuth, and other industry-standard methods.</p>
+                            <div class="article-meta">
+                                <span>8 min read</span>
+                                <span>94% helpful</span>
+                            </div>
+                        </div>
+                        
+                        <div class="article-preview">
+                            <span class="article-category">Troubleshooting</span>
+                            <h4 class="article-title">Common Integration Issues</h4>
+                            <p class="article-excerpt">Solutions to the most frequently encountered problems when integrating with third-party services and APIs.</p>
+                            <div class="article-meta">
+                                <span>12 min read</span>
+                                <span>92% helpful</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Support Demo -->
+        <div class="demo-section">
+            <div class="kb-container">
+                <div class="component-demo">
+                    <h3 class="component-title">Support Options</h3>
+                    <p class="component-description">Professional contact section with multiple support channels and clear availability information.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-xl); max-width: 900px; margin: 0 auto;">
+                        <div class="category-card" style="text-align: center;">
+                            <div class="category-icon" style="margin: 0 auto var(--spacing-lg);">📧</div>
+                            <h3 class="category-title">Email Support</h3>
+                            <p class="category-description">Get detailed help via email within 24 hours</p>
+                            <div style="margin-bottom: var(--spacing-lg);">
+                                <small style="color: var(--text-muted);">Response within 24 hours</small>
+                            </div>
+                            <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Email</a>
+                        </div>
+                        
+                        <div class="category-card" style="text-align: center;">
+                            <div class="category-icon" style="margin: 0 auto var(--spacing-lg);">💬</div>
+                            <h3 class="category-title">Live Chat</h3>
+                            <p class="category-description">Chat with our support team in real-time</p>
+                            <div style="margin-bottom: var(--spacing-lg);">
+                                <small style="color: var(--text-muted);">Available 9 AM - 6 PM PST</small>
+                            </div>
+                            <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Start Chat</a>
+                        </div>
+                        
+                        <div class="category-card" style="text-align: center;">
+                            <div class="category-icon" style="margin: 0 auto var(--spacing-lg);">📞</div>
+                            <h3 class="category-title">Phone Support</h3>
+                            <p class="category-description">Speak directly with a support representative</p>
+                            <div style="margin-bottom: var(--spacing-lg);">
+                                <small style="color: var(--text-muted);">Mon-Fri 9 AM - 6 PM PST</small>
+                            </div>
+                            <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Palette Demo -->
+        <div class="demo-section">
+            <div class="kb-container">
+                <div class="component-demo">
+                    <h3 class="component-title">Professional Color Palette</h3>
+                    <p class="component-description">Carefully selected colors that convey trust, professionalism, and clarity.</p>
+                    
+                    <div class="color-palette">
+                        <div class="color-item">
+                            <div class="color-swatch" style="background-color: #2563eb;"></div>
+                            <div class="color-name">Primary Blue</div>
+                            <div class="color-value">#2563eb</div>
+                        </div>
+                        
+                        <div class="color-item">
+                            <div class="color-swatch" style="background-color: #0ea5e9;"></div>
+                            <div class="color-name">Accent Blue</div>
+                            <div class="color-value">#0ea5e9</div>
+                        </div>
+                        
+                        <div class="color-item">
+                            <div class="color-swatch" style="background-color: #1e293b;"></div>
+                            <div class="color-name">Text Primary</div>
+                            <div class="color-value">#1e293b</div>
+                        </div>
+                        
+                        <div class="color-item">
+                            <div class="color-swatch" style="background-color: #64748b;"></div>
+                            <div class="color-name">Text Secondary</div>
+                            <div class="color-value">#64748b</div>
+                        </div>
+                        
+                        <div class="color-item">
+                            <div class="color-swatch" style="background-color: #f8fafc;"></div>
+                            <div class="color-name">Background Light</div>
+                            <div class="color-value">#f8fafc</div>
+                        </div>
+                        
+                        <div class="color-item">
+                            <div class="color-swatch" style="background-color: #e2e8f0;"></div>
+                            <div class="color-name">Border Color</div>
+                            <div class="color-value">#e2e8f0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography Demo -->
+        <div class="demo-section">
+            <div class="kb-container">
+                <div class="component-demo">
+                    <h3 class="component-title">Typography System</h3>
+                    <p class="component-description">Professional typography using Inter font family with consistent sizing and spacing.</p>
+                    
+                    <div style="background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: var(--spacing-2xl);">
+                        <h1 style="margin-bottom: var(--spacing-md);">Heading 1 - Main Title</h1>
+                        <h2 style="margin-bottom: var(--spacing-md);">Heading 2 - Section Title</h2>
+                        <h3 style="margin-bottom: var(--spacing-md);">Heading 3 - Subsection</h3>
+                        <h4 style="margin-bottom: var(--spacing-md);">Heading 4 - Article Title</h4>
+                        <p style="margin-bottom: var(--spacing-md);">Body text with comfortable line height and spacing for excellent readability. This paragraph demonstrates the default text styling used throughout the knowledge base.</p>
+                        <p style="font-size: var(--font-size-sm); color: var(--text-muted); margin-bottom: 0;">Small text for metadata, captions, and secondary information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Demo -->
+    <footer class="kb-footer">
+        <div class="kb-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Help & Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Getting Started</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link">Troubleshooting</a></li>
+                        <li><a href="#" class="footer-link">Video Tutorials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Features</a></li>
+                        <li><a href="#" class="footer-link">API Documentation</a></li>
+                        <li><a href="#" class="footer-link">Integrations</a></li>
+                        <li><a href="#" class="footer-link">Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Email Support</a></li>
+                        <li><a href="#" class="footer-link">Live Chat</a></li>
+                        <li><a href="#" class="footer-link">Community</a></li>
+                        <li><a href="#" class="footer-link">Enterprise Sales</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Professional Knowledge Base. All rights reserved. | 
+                    <a href="#" class="footer-link"> Privacy Policy</a> | 
+                    <a href="#" class="footer-link"> Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

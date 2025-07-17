@@ -1,0 +1,49 @@
+{
+  "name": "Studious",
+  "version": "1.0.0",
+  "description": "A clean, professional knowledge base theme inspired by modern educational platforms. Features prominent search functionality, organized categories, and academic-friendly design.",
+  "author": "Theme Generator",
+  "category": "Knowledge Base",
+  "tags": ["academic", "clean", "professional", "search-focused", "educational"],
+  "preview_image": "demo.html",
+  "color_scheme": {
+    "primary": "#1a1a1a",
+    "secondary": "#4a5568",
+    "accent": "#3182ce",
+    "background": "#ffffff",
+    "text": "#2d3748"
+  },
+  "typography": {
+    "font_family": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+    "headings": "Inter",
+    "body": "Inter"
+  },
+  "features": [
+    "Clean, academic design",
+    "Prominent search functionality",
+    "Organized category grid",
+    "Popular articles section",
+    "Video demo integration",
+    "Mobile-responsive layout",
+    "Professional typography",
+    "WCAG accessibility compliant"
+  ],
+  "layout": {
+    "type": "single-column",
+    "header": "fixed",
+    "sidebar": false,
+    "footer": true
+  },
+  "components": [
+    "Nav",
+    "HeroSection", 
+    "CategoryGrid",
+    "PopularArticles",
+    "VideoDemo",
+    "Footer",
+    "Page"
+  ],
+  "pages": [
+    "homepage"
+  ]
+} 

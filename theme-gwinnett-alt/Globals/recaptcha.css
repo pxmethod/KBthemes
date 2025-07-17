@@ -1,0 +1,20 @@
+/* reCAPTCHA styles for Gwinnett theme */
+
+.recaptcha-container {
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.g-recaptcha {
+  display: inline-block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.recaptcha-error {
+  color: #ef4444;
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-sm);
+  text-align: center;
+} 

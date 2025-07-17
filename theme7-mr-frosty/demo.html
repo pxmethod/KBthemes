@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webflow Help Center Theme - Feature Demo</title>
+    <link rel="stylesheet" href="Globals/styles.css">
+    <style>
+        /* Demo Specific Styles */
+        .demo-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-white);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+        }
+        
+        .demo-banner h1 {
+            color: var(--text-white);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .feature-showcase {
+            padding: var(--spacing-5xl) 0;
+            background: var(--background-secondary);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-3xl);
+        }
+        
+        .feature-card {
+            background: var(--background-primary);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-xl);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-lg);
+            font-size: var(--font-size-2xl);
+            color: var(--text-white);
+        }
+        
+        .color-palette {
+            padding: var(--spacing-5xl) 0;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-3xl);
+        }
+        
+        .color-swatch {
+            text-align: center;
+        }
+        
+        .color-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto var(--spacing-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .typography-demo {
+            padding: var(--spacing-5xl) 0;
+            background: var(--background-secondary);
+        }
+        
+        .type-example {
+            margin-bottom: var(--spacing-2xl);
+            padding: var(--spacing-lg);
+            background: var(--background-primary);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-color);
+        }
+        
+        .component-showcase {
+            padding: var(--spacing-5xl) 0;
+        }
+        
+        .component-demo {
+            margin-bottom: var(--spacing-4xl);
+            padding: var(--spacing-2xl);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-xl);
+            background: var(--background-primary);
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            font-family: 'Courier New', monospace;
+            font-size: var(--font-size-sm);
+            overflow-x: auto;
+            margin-top: var(--spacing-md);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-banner">
+        <div class="container">
+            <h1>🎯 Webflow Help Center Theme</h1>
+            <p style="font-size: var(--font-size-xl); opacity: 0.9;">Complete Feature Demo & Documentation</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="/" class="logo">Help Center Demo</a>
+                </div>
+                
+                <nav class="header-nav">
+                    <ul class="nav-menu">
+                        <li><a href="#features" class="nav-link">Features</a></li>
+                        <li><a href="#colors" class="nav-link">Colors</a></li>
+                        <li><a href="#typography" class="nav-link">Typography</a></li>
+                        <li><a href="#components" class="nav-link">Components</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-right">
+                    <a href="index.html" class="btn btn-primary">Live Preview</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Showcase -->
+    <section id="features" class="feature-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Theme Features</h2>
+                <p class="section-subtitle">Discover all the powerful features that make this theme perfect for modern help centers.</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Clean Design</h3>
+                    <p>Modern, minimal aesthetic inspired by premium Webflow templates with carefully crafted spacing and typography.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Fully Responsive</h3>
+                    <p>Optimized for all devices with mobile-first approach ensuring perfect experience on any screen size.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Prominent Search</h3>
+                    <p>Large, accessible search functionality that helps users find answers quickly and efficiently.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏗️</div>
+                    <h3>Modular Components</h3>
+                    <p>Reusable React components that can be easily customized and extended for your specific needs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Performance</h3>
+                    <p>Optimized CSS and minimal JavaScript for lightning-fast load times and smooth interactions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>Accessibility Ready</h3>
+                    <p>Built with WCAG guidelines in mind, ensuring your help center is accessible to all users.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Palette -->
+    <section id="colors" class="color-palette">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Color Palette</h2>
+                <p class="section-subtitle">Professional color scheme designed for clarity and excellent readability.</p>
+            </div>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-circle" style="background-color: #2563eb;"></div>
+                    <h4>Primary Blue</h4>
+                    <p style="font-family: 'Courier New', monospace; font-size: var(--font-size-sm);">#2563eb</p>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-circle" style="background-color: #0ea5e9;"></div>
+                    <h4>Accent Blue</h4>
+                    <p style="font-family: 'Courier New', monospace; font-size: var(--font-size-sm);">#0ea5e9</p>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-circle" style="background-color: #1e293b;"></div>
+                    <h4>Text Primary</h4>
+                    <p style="font-family: 'Courier New', monospace; font-size: var(--font-size-sm);">#1e293b</p>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-circle" style="background-color: #64748b;"></div>
+                    <h4>Text Secondary</h4>
+                    <p style="font-family: 'Courier New', monospace; font-size: var(--font-size-sm);">#64748b</p>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-circle" style="background-color: #f8fafc;"></div>
+                    <h4>Background Light</h4>
+                    <p style="font-family: 'Courier New', monospace; font-size: var(--font-size-sm);">#f8fafc</p>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-circle" style="background-color: #ffffff; border: 1px solid var(--border-color);"></div>
+                    <h4>Background White</h4>
+                    <p style="font-family: 'Courier New', monospace; font-size: var(--font-size-sm);">#ffffff</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography -->
+    <section id="typography" class="typography-demo">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Typography System</h2>
+                <p class="section-subtitle">Clean, readable typography using Inter font for optimal user experience.</p>
+            </div>
+            
+            <div class="type-example">
+                <h1>Heading 1 - Hero Titles</h1>
+                <p style="color: var(--text-muted); margin: 0;">3.75rem (60px) - Bold Weight</p>
+            </div>
+            
+            <div class="type-example">
+                <h2>Heading 2 - Section Titles</h2>
+                <p style="color: var(--text-muted); margin: 0;">2.25rem (36px) - Semibold Weight</p>
+            </div>
+            
+            <div class="type-example">
+                <h3>Heading 3 - Card Titles</h3>
+                <p style="color: var(--text-muted); margin: 0;">1.875rem (30px) - Semibold Weight</p>
+            </div>
+            
+            <div class="type-example">
+                <h4>Heading 4 - Component Titles</h4>
+                <p style="color: var(--text-muted); margin: 0;">1.5rem (24px) - Semibold Weight</p>
+            </div>
+            
+            <div class="type-example">
+                <p>Body text - Perfect for article content and descriptions. This font size ensures excellent readability across all devices while maintaining a professional appearance.</p>
+                <p style="color: var(--text-muted); margin: 0;">1rem (16px) - Normal Weight</p>
+            </div>
+            
+            <div class="type-example">
+                <p style="font-size: var(--font-size-sm); margin-bottom: var(--spacing-xs);">Small text - Used for meta information, captions, and secondary details.</p>
+                <p style="color: var(--text-muted); margin: 0;">0.875rem (14px) - Normal Weight</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Showcase -->
+    <section id="components" class="component-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Component Library</h2>
+                <p class="section-subtitle">Reusable components that make up the complete help center experience.</p>
+            </div>
+            
+            <!-- Buttons Demo -->
+            <div class="component-demo">
+                <h3>Buttons</h3>
+                <p>Various button styles for different actions and contexts.</p>
+                
+                <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin: var(--spacing-lg) 0;">
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-primary btn-large">Large Button</button>
+                </div>
+                
+                <div class="code-block">
+&lt;button class="btn btn-primary"&gt;Primary Button&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary Button&lt;/button&gt;
+&lt;button class="btn btn-primary btn-large"&gt;Large Button&lt;/button&gt;
+                </div>
+            </div>
+
+            <!-- Search Component Demo -->
+            <div class="component-demo">
+                <h3>Search Component</h3>
+                <p>Prominent search functionality with clean styling and focus states.</p>
+                
+                <div style="max-width: 500px; margin: var(--spacing-lg) 0;">
+                    <div class="search-container">
+                        <form class="search-form">
+                            <input type="search" class="search-input" placeholder="Search for help articles..." />
+                            <button type="submit" class="search-button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card Demo -->
+            <div class="component-demo">
+                <h3>Category Cards</h3>
+                <p>Interactive cards that showcase different help categories with hover effects.</p>
+                
+                <div style="max-width: 400px; margin: var(--spacing-lg) 0;">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <span>🚀</span>
+                        </div>
+                        <h4 class="category-title">Getting Started</h4>
+                        <p class="category-description">Everything you need to know to get up and running quickly.</p>
+                        <div class="category-meta">
+                            <span class="article-count">12 articles</span>
+                            <span class="category-arrow">→</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Support Demo -->
+            <div class="component-demo">
+                <h3>Contact Support Cards</h3>
+                <p>Support options presented in clean, actionable cards.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg); margin: var(--spacing-lg) 0;">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <span>💬</span>
+                        </div>
+                        <h4 class="contact-title">Live Chat</h4>
+                        <p class="contact-description">Get instant help from our support team.</p>
+                        <a href="#" class="btn btn-primary">Start Chat</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <span>✉️</span>
+                        </div>
+                        <h4 class="contact-title">Email Support</h4>
+                        <p class="contact-description">Send us a detailed message.</p>
+                        <a href="#" class="btn btn-primary">Send Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Guide -->
+    <section style="padding: var(--spacing-5xl) 0; background: var(--background-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Implementation Guide</h2>
+                <p class="section-subtitle">How to get started with the Webflow Help Center theme.</p>
+            </div>
+            
+            <div style="background: var(--background-primary); padding: var(--spacing-2xl); border-radius: var(--border-radius-xl); border: 1px solid var(--border-color);">
+                <h3>Quick Start</h3>
+                <ol style="margin: var(--spacing-lg) 0; padding-left: var(--spacing-xl);">
+                    <li style="margin-bottom: var(--spacing-sm);">Copy the theme files to your project directory</li>
+                    <li style="margin-bottom: var(--spacing-sm);">Include the styles.css file in your HTML head</li>
+                    <li style="margin-bottom: var(--spacing-sm);">Import and use the React components in your pages</li>
+                    <li style="margin-bottom: var(--spacing-sm);">Customize colors and content to match your brand</li>
+                    <li>Deploy and enjoy your modern help center!</li>
+                </ol>
+                
+                <div class="code-block">
+// Import components
+import Page from './Components/Page';
+import HeroSection from './Components/HeroSection';
+import CategoryGrid from './Components/CategoryGrid';
+
+// Use in your React app
+&lt;Page&gt;
+  &lt;HeroSection title="Need some help?" /&gt;
+  &lt;CategoryGrid /&gt;
+&lt;/Page&gt;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Theme Info</h4>
+                    <a href="index.html">Live Preview</a>
+                    <a href="#features">Features</a>
+                    <a href="#components">Components</a>
+                    <a href="../">Back to Gallery</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <a href="#colors">Color System</a>
+                    <a href="#typography">Typography</a>
+                    <a href="#implementation">Implementation</a>
+                    <a href="#support">Support</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="https://webflow.com" target="_blank">Webflow</a>
+                    <a href="https://reactjs.org" target="_blank">React</a>
+                    <a href="https://fonts.google.com/specimen/Inter" target="_blank">Inter Font</a>
+                    <a href="https://heroicons.com" target="_blank">Heroicons</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kustomer Templates. Built with ❤️ for better customer support experiences.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

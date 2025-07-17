@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Frosty ThemeLive Preview</title>
+    <link rel="stylesheet" href="Globals/styles.css">
+    <style>
+        /* Live Preview Specific Styles */
+        .preview-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--text-white);
+            padding: var(--spacing-md) 0;
+            text-align: center;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        ✨ Live Preview: Webflow Help Center Theme ✨
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="/" class="logo">Help Center</a>
+                </div>
+                
+                <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-menu">
+                        <li><a href="/" class="nav-link active">Home</a></li>
+                        <li><a href="/categories" class="nav-link">Categories</a></li>
+                        <li><a href="/search" class="nav-link">Search</a></li>
+                        <li><a href="/contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-right">
+                    <a href="/contact" class="btn btn-primary">Get Support</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Need some help?</h1>
+                <p class="hero-subtitle">Find articles, help and advice for getting the most out of our platform. We're here to help you succeed and answer any questions you might have.</p>
+                
+                <div class="search-section">
+                    <div class="search-container">
+                        <form action="/search" method="get" class="search-form">
+                            <input 
+                                type="search" 
+                                name="q"
+                                class="search-input" 
+                                placeholder="Search for articles, guides, or FAQs..."
+                                aria-label="Search knowledge base"
+                                autocomplete="off"
+                            />
+                            <button type="submit" class="search-button" aria-label="Search">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Categories you may like</h2>
+                <p class="section-subtitle">Browse through our comprehensive help categories to find exactly what you're looking for.</p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="/category/getting-started" class="category-card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">🚀</span>
+                    </div>
+                    <h3 class="category-title">Getting Started</h3>
+                    <p class="category-description">Everything you need to know to get up and running quickly with our platform and services.</p>
+                    <div class="category-meta">
+                        <span class="article-count">12 articles</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="/category/account-billing" class="category-card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">💳</span>
+                    </div>
+                    <h3 class="category-title">Account & Billing</h3>
+                    <p class="category-description">Manage your account settings, subscription plans, and billing information with ease.</p>
+                    <div class="category-meta">
+                        <span class="article-count">8 articles</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="/category/features-tools" class="category-card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">⚡</span>
+                    </div>
+                    <h3 class="category-title">Features & Tools</h3>
+                    <p class="category-description">Learn about all the powerful features and tools available to help you succeed.</p>
+                    <div class="category-meta">
+                        <span class="article-count">24 articles</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="/category/technical-support" class="category-card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">🔧</span>
+                    </div>
+                    <h3 class="category-title">Technical Support</h3>
+                    <p class="category-description">Find solutions to technical issues and troubleshooting guides for common problems.</p>
+                    <div class="category-meta">
+                        <span class="article-count">15 articles</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="/category/integrations" class="category-card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">🔗</span>
+                    </div>
+                    <h3 class="category-title">Integrations</h3>
+                    <p class="category-description">Connect with third-party services and learn about our API and integration options.</p>
+                    <div class="category-meta">
+                        <span class="article-count">18 articles</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="/category/security-privacy" class="category-card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">🔒</span>
+                    </div>
+                    <h3 class="category-title">Security & Privacy</h3>
+                    <p class="category-description">Learn about our security measures, privacy policies, and data protection practices.</p>
+                    <div class="category-meta">
+                        <span class="article-count">9 articles</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Topics Section -->
+    <section class="popular-topics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular topics</h2>
+                <p class="section-subtitle">Get quick answers to the most frequently asked questions from our community.</p>
+            </div>
+            
+            <div class="topics-grid">
+                <a href="/article/create-account" class="topic-item">
+                    <h3 class="topic-title">How do I create an account?</h3>
+                    <p class="topic-description">Learn how to sign up and get started with your new account in just a few simple steps.</p>
+                </a>
+
+                <a href="/article/reset-password" class="topic-item">
+                    <h3 class="topic-title">How to reset my password?</h3>
+                    <p class="topic-description">Step-by-step guide to reset your password and regain access to your account securely.</p>
+                </a>
+
+                <a href="/article/update-billing" class="topic-item">
+                    <h3 class="topic-title">How do I update my billing information?</h3>
+                    <p class="topic-description">Manage your payment methods, update billing details, and view your subscription status.</p>
+                </a>
+
+                <a href="/article/invite-team-members" class="topic-item">
+                    <h3 class="topic-title">How to invite team members?</h3>
+                    <p class="topic-description">Add colleagues to your workspace and manage team permissions and access levels.</p>
+                </a>
+
+                <a href="/article/third-party-integrations" class="topic-item">
+                    <h3 class="topic-title">How to integrate with third-party apps?</h3>
+                    <p class="topic-description">Connect your favorite tools and services to streamline your workflow and productivity.</p>
+                </a>
+
+                <a href="/article/export-data" class="topic-item">
+                    <h3 class="topic-title">How to export my data?</h3>
+                    <p class="topic-description">Download and backup your data in various formats to keep your information safe.</p>
+                </a>
+
+                <a href="/article/cancel-subscription" class="topic-item">
+                    <h3 class="topic-title">How do I cancel my subscription?</h3>
+                    <p class="topic-description">Learn about the cancellation process, what happens to your data, and available alternatives.</p>
+                </a>
+
+                <a href="/article/two-factor-authentication" class="topic-item">
+                    <h3 class="topic-title">How to enable two-factor authentication?</h3>
+                    <p class="topic-description">Secure your account with an extra layer of protection using two-factor authentication.</p>
+                </a>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--spacing-3xl);">
+                <a href="/articles" class="btn btn-secondary btn-large">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support Section -->
+    <section class="contact-support-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Still need help?</h2>
+                <p class="section-subtitle">Can't find what you're looking for? Our dedicated support team is here to help you get the answers you need.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span role="img" aria-hidden="true">💬</span>
+                    </div>
+                    <h3 class="contact-title">Live Chat</h3>
+                    <p class="contact-description">Get instant help from our support team. Available 24/7 to answer your questions.</p>
+                    <a href="/chat" class="btn btn-primary">Start Chat</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span role="img" aria-hidden="true">✉️</span>
+                    </div>
+                    <h3 class="contact-title">Email Support</h3>
+                    <p class="contact-description">Send us a detailed message and we'll get back to you within 24 hours.</p>
+                    <a href="/contact" class="btn btn-primary">Send Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span role="img" aria-hidden="true">❓</span>
+                    </div>
+                    <h3 class="contact-title">FAQ</h3>
+                    <p class="contact-description">Browse our frequently asked questions for quick answers to common issues.</p>
+                    <a href="/faq" class="btn btn-primary">View FAQ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Help Center</h4>
+                    <a href="/categories">Browse Categories</a>
+                    <a href="/articles">All Articles</a>
+                    <a href="/search">Search</a>
+                    <a href="/faq">FAQ</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/chat">Live Chat</a>
+                    <a href="/submit-ticket">Submit Ticket</a>
+                    <a href="/status">System Status</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="/about">About Us</a>
+                    <a href="/careers">Careers</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/press">Press</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                    <a href="/cookies">Cookie Policy</a>
+                    <a href="/security">Security</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Company. All rights reserved. Built with ❤️ for better customer support.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

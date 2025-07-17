@@ -1,0 +1,21 @@
+{
+  "name": "theme-screenshot-generator",
+  "version": "1.0.0",
+  "description": "Automated screenshot generator for knowledge base themes",
+  "main": "screenshot-generator.js",
+  "scripts": {
+    "generate-thumbnails": "node screenshot-generator.js",
+    "install": "npm install puppeteer"
+  },
+  "keywords": [
+    "screenshots",
+    "thumbnails",
+    "themes",
+    "automation"
+  ],
+  "dependencies": {
+    "puppeteer": "^21.5.0"
+  },
+  "author": "Theme Library",
+  "license": "MIT"
+} 

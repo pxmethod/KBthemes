@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Knowledge Base - Live Preview</title>
+    <link rel="stylesheet" href="Globals/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Live Preview Specific Styles */
+        .preview-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--text-white);
+            padding: var(--spacing-md) 0;
+            text-align: center;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .stats-section {
+            background: var(--background-secondary);
+            padding: var(--spacing-2xl) 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: var(--spacing-lg);
+        }
+        
+        .stat-number {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .recent-updates {
+            background: var(--background-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+        }
+        
+        .update-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .update-item:last-child {
+            border-bottom: none;
+        }
+        
+        .update-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-light);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-sm);
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .update-content {
+            flex: 1;
+        }
+        
+        .update-title {
+            font-weight: var(--font-weight-medium);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .update-time {
+            font-size: var(--font-size-xs);
+            color: var(--text-muted);
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .quick-action {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: var(--background-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+        
+        .quick-action:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .quick-action-icon {
+            font-size: var(--font-size-lg);
+        }
+        
+        .announcement {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .announcement-title {
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .announcement-text {
+            opacity: 0.9;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .announcement-link {
+            color: white;
+            text-decoration: underline;
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .announcement-link:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+    <script src="Globals/utils.js" defer></script>
+</head>
+<body>
+    <div class="preview-banner">
+        ✨ Live Preview: Professional Knowledge Base Theme ✨
+    </div>
+
+    <!-- Header -->
+    <header class="kb-header">
+        <div class="kb-container">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="#" class="site-title">TechCorp Knowledge Base</a>
+                </div>
+                <nav class="header-nav">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">Browse Categories</a>
+                    <a href="#" class="nav-link">Search</a>
+                    <a href="#" class="nav-link">All Articles</a>
+                    <a href="#" class="nav-link">Contact Support</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Announcement -->
+        <div class="kb-container" style="padding-top: var(--spacing-xl);">
+            <div class="announcement">
+                <div class="announcement-title">📢 New API v2.0 Documentation Available</div>
+                <div class="announcement-text">
+                    Explore our updated API documentation with improved examples and interactive playground.
+                </div>
+                <a href="#" class="announcement-link">View API Docs →</a>
+            </div>
+        </div>
+
+        <!-- Hero Search Section -->
+        <section class="search-section">
+            <div class="kb-container">
+                <h1 class="search-title">Welcome to TechCorp Support</h1>
+                <p class="search-subtitle">Find answers, browse documentation, and get the help you need to succeed</p>
+                
+                <form class="search-form">
+                    <div class="search-input-wrapper">
+                        <input
+                            type="search"
+                            class="search-input"
+                            placeholder="Search for articles, guides, API docs, and more..."
+                        />
+                        <button type="submit" class="search-button">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                
+                <div style="margin-top: 2rem; opacity: 0.8;">
+                    <p style="font-size: 0.875rem; margin-bottom: 0.5rem;">Popular searches:</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                        <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.875rem;">Getting Started</a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.875rem;">API Authentication</a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.875rem;">Billing Issues</a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.875rem;">Integration Guide</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="kb-container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Help Articles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">User Satisfaction</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support Available</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="kb-section--small">
+            <div class="kb-container">
+                <h2 class="text-center font-bold text-primary mb-lg">Quick Actions</h2>
+                <div class="quick-actions">
+                    <a href="#" class="quick-action">
+                        <span class="quick-action-icon">🎫</span>
+                        <span>Submit Support Ticket</span>
+                    </a>
+                    <a href="#" class="quick-action">
+                        <span class="quick-action-icon">📖</span>
+                        <span>Browse Documentation</span>
+                    </a>
+                    <a href="#" class="quick-action">
+                        <span class="quick-action-icon">💬</span>
+                        <span>Live Chat Support</span>
+                    </a>
+                    <a href="#" class="quick-action">
+                        <span class="quick-action-icon">📊</span>
+                        <span>System Status</span>
+                    </a>
+                    <a href="#" class="quick-action">
+                        <span class="quick-action-icon">🔗</span>
+                        <span>API Reference</span>
+                    </a>
+                    <a href="#" class="quick-action">
+                        <span class="quick-action-icon">👥</span>
+                        <span>Community Forum</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <section class="kb-section">
+            <div class="kb-container">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-3xl); align-items: start;">
+                    <!-- Categories -->
+                    <div>
+                        <h2 class="font-bold text-primary mb-lg">Browse by Category</h2>
+                        <div class="categories-grid">
+                            <a href="#" class="category-card">
+                                <div class="category-icon">🚀</div>
+                                <h3 class="category-title">Getting Started</h3>
+                                <p class="category-description">Learn the basics and get up and running quickly with our comprehensive getting started guides.</p>
+                                <div class="category-meta">
+                                    <span class="article-count">12 articles</span>
+                                    <span class="view-all-link">View all →</span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="category-card">
+                                <div class="category-icon">⚡</div>
+                                <h3 class="category-title">API Documentation</h3>
+                                <p class="category-description">Complete developer resources, code examples, and API reference documentation.</p>
+                                <div class="category-meta">
+                                    <span class="article-count">28 articles</span>
+                                    <span class="view-all-link">View all →</span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="category-card">
+                                <div class="category-icon">💳</div>
+                                <h3 class="category-title">Billing & Accounts</h3>
+                                <p class="category-description">Manage your subscription, billing information, and account settings.</p>
+                                <div class="category-meta">
+                                    <span class="article-count">8 articles</span>
+                                    <span class="view-all-link">View all →</span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="category-card">
+                                <div class="category-icon">🔧</div>
+                                <h3 class="category-title">Troubleshooting</h3>
+                                <p class="category-description">Solutions to common issues and step-by-step troubleshooting guides.</p>
+                                <div class="category-meta">
+                                    <span class="article-count">15 articles</span>
+                                    <span class="view-all-link">View all →</span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="category-card">
+                                <div class="category-icon">🔒</div>
+                                <h3 class="category-title">Security & Privacy</h3>
+                                <p class="category-description">Learn about our security measures, privacy policies, and data protection.</p>
+                                <div class="category-meta">
+                                    <span class="article-count">9 articles</span>
+                                    <span class="view-all-link">View all →</span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="category-card">
+                                <div class="category-icon">🔗</div>
+                                <h3 class="category-title">Integrations</h3>
+                                <p class="category-description">Connect with third-party tools and services to enhance your workflow.</p>
+                                <div class="category-meta">
+                                    <span class="article-count">18 articles</span>
+                                    <span class="view-all-link">View all →</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Sidebar -->
+                    <div>
+                        <!-- Recent Updates -->
+                        <div class="recent-updates">
+                            <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-lg); color: var(--text-primary);">
+                                Recent Updates
+                            </h3>
+                            
+                            <div class="update-item">
+                                <div class="update-icon">📝</div>
+                                <div class="update-content">
+                                    <div class="update-title">API v2.0 Documentation Released</div>
+                                    <div class="update-time">2 hours ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="update-item">
+                                <div class="update-icon">🛠️</div>
+                                <div class="update-content">
+                                    <div class="update-title">New Troubleshooting Guide Added</div>
+                                    <div class="update-time">1 day ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="update-item">
+                                <div class="update-icon">💡</div>
+                                <div class="update-content">
+                                    <div class="update-title">Best Practices Guide Updated</div>
+                                    <div class="update-time">3 days ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="update-item">
+                                <div class="update-icon">🔐</div>
+                                <div class="update-content">
+                                    <div class="update-title">Security Guidelines Enhanced</div>
+                                    <div class="update-time">1 week ago</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Support -->
+                        <div style="margin-top: var(--spacing-xl);">
+                            <div style="background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: var(--spacing-xl); text-align: center;">
+                                <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-md); color: var(--text-primary);">
+                                    Need Personal Help?
+                                </h3>
+                                <p style="color: var(--text-secondary); margin-bottom: var(--spacing-lg); font-size: var(--font-size-sm);">
+                                    Can't find what you're looking for? Our support team is here to help.
+                                </p>
+                                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; margin-bottom: var(--spacing-sm);">
+                                    Contact Support
+                                </a>
+                                <a href="#" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                                    Live Chat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Articles -->
+        <section class="kb-section--small" style="background: var(--background-secondary);">
+            <div class="kb-container">
+                <h2 class="text-center font-bold text-primary mb-xl">Most Popular Articles</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--spacing-lg);">
+                    <div class="category-card">
+                        <div style="display: flex; align-items: flex-start; gap: var(--spacing-md);">
+                            <div style="width: 40px; height: 40px; background: var(--primary-light); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">
+                                📖
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm);">
+                                    <a href="#" style="color: var(--text-primary);">Quick Start Guide: Your First 10 Minutes</a>
+                                </h3>
+                                <p style="font-size: var(--font-size-sm); color: var(--text-muted); margin-bottom: var(--spacing-sm);">
+                                    Get up and running in just 10 minutes with this essential guide.
+                                </p>
+                                <div style="font-size: var(--font-size-xs); color: var(--text-muted);">
+                                    5 min read • 2,847 views • 97% helpful
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div style="display: flex; align-items: flex-start; gap: var(--spacing-md);">
+                            <div style="width: 40px; height: 40px; background: var(--primary-light); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">
+                                🔑
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm);">
+                                    <a href="#" style="color: var(--text-primary);">API Authentication Best Practices</a>
+                                </h3>
+                                <p style="font-size: var(--font-size-sm); color: var(--text-muted); margin-bottom: var(--spacing-sm);">
+                                    Secure your API calls with proper authentication methods.
+                                </p>
+                                <div style="font-size: var(--font-size-xs); color: var(--text-muted);">
+                                    8 min read • 1,923 views • 94% helpful
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <div style="display: flex; align-items: flex-start; gap: var(--spacing-md);">
+                            <div style="width: 40px; height: 40px; background: var(--primary-light); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">
+                                🛠️
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm);">
+                                    <a href="#" style="color: var(--text-primary);">Troubleshooting Common Integration Issues</a>
+                                </h3>
+                                <p style="font-size: var(--font-size-sm); color: var(--text-muted); margin-bottom: var(--spacing-sm);">
+                                    Solutions to the most frequently encountered problems.
+                                </p>
+                                <div style="font-size: var(--font-size-xs); color: var(--text-muted);">
+                                    12 min read • 1,654 views • 92% helpful
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: var(--spacing-2xl);">
+                    <a href="#" class="btn btn-outline">View All Articles</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="kb-footer">
+        <div class="kb-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Help & Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Getting Started</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link">Troubleshooting</a></li>
+                        <li><a href="#" class="footer-link">Video Tutorials</a></li>
+                        <li><a href="#" class="footer-link">User Guides</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Features</a></li>
+                        <li><a href="#" class="footer-link">Pricing</a></li>
+                        <li><a href="#" class="footer-link">API Documentation</a></li>
+                        <li><a href="#" class="footer-link">Integrations</a></li>
+                        <li><a href="#" class="footer-link">Product Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Email Support</a></li>
+                        <li><a href="#" class="footer-link">Phone Support</a></li>
+                        <li><a href="#" class="footer-link">Contact Form</a></li>
+                        <li><a href="#" class="footer-link">Live Chat</a></li>
+                        <li><a href="#" class="footer-link">Community Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechCorp. All rights reserved. | 
+                    <a href="#" class="footer-link"> Privacy Policy</a> | 
+                    <a href="#" class="footer-link"> Terms of Service</a> | 
+                    <a href="#" class="footer-link"> Security</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studious Theme - Demo</title>
+    <link rel="stylesheet" href="Globals/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        .demo-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .demo-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .demo-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .demo-section:last-child {
+            border-bottom: none;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .feature-card {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .color-swatch {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+        }
+        .color-primary { background: #1a1a1a; }
+        .color-accent { background: #3182ce; }
+        .color-secondary { background: #4a5568; }
+        .color-light { background: #f7fafc; color: #1a1a1a; }
+    </style>
+</head>
+<body>
+    
+    <!-- Demo Header -->
+    <header class="demo-header">
+        <div class="container">
+            <h1>🎓 Studious Theme</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">A clean, professional knowledge base theme inspired by modern educational platforms</p>
+            <a href="index.html" class="btn btn-primary" style="background: white; color: #667eea;">View Live Preview</a>
+        </div>
+    </header>
+
+    <!-- Theme Overview -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Theme Overview</h2>
+            <p style="text-align: center; font-size: 1.125rem; color: #4a5568; max-width: 800px; margin: 0 auto;">
+                Studious is designed for educational institutions, online learning platforms, and knowledge-based businesses. 
+                It features clean typography, intuitive navigation, and a focus on content accessibility.
+            </p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Prominent Search</h3>
+                    <p>Large, accessible search functionality that helps users find what they need quickly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Category Organization</h3>
+                    <p>Clean grid layout for organizing content into logical categories and topics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Professional Design</h3>
+                    <p>Modern, academic-inspired design that builds trust and authority.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Layout</h3>
+                    <p>Fully responsive design that works perfectly on all devices and screen sizes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>Accessibility First</h3>
+                    <p>WCAG compliant with proper focus states, skip links, and screen reader support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Performance Optimized</h3>
+                    <p>Clean code, optimized CSS, and fast loading times for better user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Palette -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Color Palette</h2>
+            <div class="color-palette">
+                <div class="color-swatch color-primary">
+                    <div>Primary</div>
+                    <div style="font-size: 0.875rem; opacity: 0.8;">#1a1a1a</div>
+                </div>
+                <div class="color-swatch color-accent">
+                    <div>Accent</div>
+                    <div style="font-size: 0.875rem; opacity: 0.8;">#3182ce</div>
+                </div>
+                <div class="color-swatch color-secondary">
+                    <div>Secondary</div>
+                    <div style="font-size: 0.875rem; opacity: 0.8;">#4a5568</div>
+                </div>
+                <div class="color-swatch color-light">
+                    <div>Background</div>
+                    <div style="font-size: 0.875rem; opacity: 0.6;">#f7fafc</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Typography</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="margin-bottom: 3rem;">
+                    <h1 style="margin-bottom: 0.5rem;">Heading 1 - Inter Bold</h1>
+                    <p style="color: #718096;">Used for main page titles and hero sections</p>
+                </div>
+                <div style="margin-bottom: 3rem;">
+                    <h2 style="margin-bottom: 0.5rem;">Heading 2 - Inter Semibold</h2>
+                    <p style="color: #718096;">Used for section titles and major headings</p>
+                </div>
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="margin-bottom: 0.5rem;">Heading 3 - Inter Medium</h3>
+                    <p style="color: #718096;">Used for card titles and subsections</p>
+                </div>
+                <div>
+                    <p style="font-size: 1.125rem; margin-bottom: 0.5rem;">Body Text - Inter Regular</p>
+                    <p style="color: #718096;">Clean, readable typography optimized for long-form content and accessibility. Line height of 1.7 ensures comfortable reading across all devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Preview -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Component Examples</h2>
+            
+            <!-- Sample Category Cards -->
+            <h3 style="margin-bottom: 2rem;">Category Cards</h3>
+            <div class="categories-grid" style="margin-bottom: 4rem;">
+                <a href="#" class="category-card">
+                    <h3 class="category-title">Academic Resources</h3>
+                    <p class="category-description">Access course materials, syllabus information, and academic guidelines.</p>
+                </a>
+                <a href="#" class="category-card">
+                    <h3 class="category-title">Student Support</h3>
+                    <p class="category-description">Find help with enrollment, financial aid, and campus services.</p>
+                </a>
+            </div>
+
+            <!-- Sample Articles -->
+            <h3 style="margin-bottom: 2rem;">Article Cards</h3>
+            <div class="articles-grid">
+                <a href="#" class="article-card">
+                    <div class="article-category">Tutorial</div>
+                    <h3 class="article-title">Getting Started with the Platform</h3>
+                    <p class="article-author">Written by Sarah Johnson</p>
+                </a>
+                <a href="#" class="article-card">
+                    <div class="article-category">Guide</div>
+                    <h3 class="article-title">Advanced Search Techniques</h3>
+                    <p class="article-author">Written by Michael Chen</p>
+                </a>
+                <a href="#" class="article-card">
+                    <div class="article-category">FAQ</div>
+                    <h3 class="article-title">Frequently Asked Questions</h3>
+                    <p class="article-author">Written by Emma Davis</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Perfect For</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Educational Institutions</h3>
+                    <p>Universities, colleges, and schools looking for a professional knowledge base.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Corporate Training</h3>
+                    <p>Companies creating internal knowledge bases and training materials.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Online Learning</h3>
+                    <p>E-learning platforms and course providers needing organized content.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Professional Services</h3>
+                    <p>Consulting firms, agencies, and service providers with extensive documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Studious Theme</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Live Preview</a></li>
+                        <li><a href="../index.html">All Themes</a></li>
+                        <li><a href="README.md">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Components</a></li>
+                        <li><a href="#">Layouts</a></li>
+                        <li><a href="#">Responsive Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Installation Guide</a></li>
+                        <li><a href="#">Customization</a></li>
+                        <li><a href="#">Best Practices</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studious Theme. Professional knowledge base template.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html> 

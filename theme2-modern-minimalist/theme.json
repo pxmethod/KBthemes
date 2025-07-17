@@ -1,0 +1,591 @@
+{
+  "name": "Modern Minimalist",
+  "version": "1.0.0",
+  "description": "A clean, modern minimalist theme focusing on simplicity, generous white space, and minimal visual elements. Perfect for modern brands that value clarity and simplicity.",
+  "author": "Kustomer Themes",
+  "category": "minimalist",
+  "tags": ["minimalist", "modern", "clean", "simple", "white-space", "contemporary"],
+  "preview_image": "preview.jpg",
+  "customization": {
+    "colors": {
+      "primary": {
+        "label": "Primary Color",
+        "description": "Main brand color used for text and primary elements",
+        "variable": "--primary-color",
+        "default": "#1a1a1a",
+        "type": "color"
+      },
+      "primary_hover": {
+        "label": "Primary Hover Color",
+        "description": "Hover state for primary color elements",
+        "variable": "--primary-hover",
+        "default": "#333333",
+        "type": "color"
+      },
+      "secondary": {
+        "label": "Secondary Color",
+        "description": "Secondary background color",
+        "variable": "--secondary-color",
+        "default": "#fafafa",
+        "type": "color"
+      },
+      "accent": {
+        "label": "Accent Color",
+        "description": "Single accent color for highlights and focus states",
+        "variable": "--accent-color",
+        "default": "#3b82f6",
+        "type": "color"
+      },
+      "text_primary": {
+        "label": "Primary Text Color",
+        "description": "Main text color for headings and body content",
+        "variable": "--text-primary",
+        "default": "#1a1a1a",
+        "type": "color"
+      },
+      "text_secondary": {
+        "label": "Secondary Text Color",
+        "description": "Secondary text color for descriptions and meta text",
+        "variable": "--text-secondary",
+        "default": "#666666",
+        "type": "color"
+      },
+      "text_muted": {
+        "label": "Muted Text Color",
+        "description": "Muted text color for less important content",
+        "variable": "--text-muted",
+        "default": "#999999",
+        "type": "color"
+      },
+      "background_primary": {
+        "label": "Primary Background",
+        "description": "Main background color for content areas",
+        "variable": "--background-primary",
+        "default": "#ffffff",
+        "type": "color"
+      },
+      "background_secondary": {
+        "label": "Secondary Background",
+        "description": "Secondary background color for sections",
+        "variable": "--background-secondary",
+        "default": "#fafafa",
+        "type": "color"
+      },
+      "border_color": {
+        "label": "Border Color",
+        "description": "Main border color for cards and elements",
+        "variable": "--border-color",
+        "default": "#e6e6e6",
+        "type": "color"
+      }
+    },
+    "typography": {
+      "font_family_primary": {
+        "label": "Primary Font",
+        "description": "Main font family for body text",
+        "variable": "--font-family-primary",
+        "default": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+        "type": "font",
+        "options": [
+          {
+            "label": "System Font",
+            "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+          },
+          {
+            "label": "Arial",
+            "value": "Arial, Helvetica, sans-serif"
+          },
+          {
+            "label": "Helvetica",
+            "value": "Helvetica, Arial, sans-serif"
+          },
+          {
+            "label": "Inter",
+            "value": "'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
+          },
+          {
+            "label": "Source Sans Pro",
+            "value": "'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif"
+          }
+        ]
+      },
+      "font_size_hero": {
+        "label": "Hero Title Size",
+        "description": "Font size for the main hero title",
+        "variable": "--font-size-5xl",
+        "default": "3rem",
+        "type": "size",
+        "unit": "rem",
+        "min": 2,
+        "max": 5,
+        "step": 0.25
+      },
+      "font_size_section": {
+        "label": "Section Title Size",
+        "description": "Font size for section titles",
+        "variable": "--font-size-4xl",
+        "default": "2.25rem",
+        "type": "size",
+        "unit": "rem",
+        "min": 1.5,
+        "max": 4,
+        "step": 0.25
+      },
+      "font_size_base": {
+        "label": "Base Font Size",
+        "description": "Base font size for body text",
+        "variable": "--font-size-base",
+        "default": "1rem",
+        "type": "size",
+        "unit": "rem",
+        "min": 0.875,
+        "max": 1.25,
+        "step": 0.125
+      },
+      "font_weight_light": {
+        "label": "Light Font Weight",
+        "description": "Light font weight for headings",
+        "variable": "--font-weight-light",
+        "default": "300",
+        "type": "select",
+        "options": [
+          {
+            "label": "Light (300)",
+            "value": "300"
+          },
+          {
+            "label": "Normal (400)",
+            "value": "400"
+          },
+          {
+            "label": "Medium (500)",
+            "value": "500"
+          }
+        ]
+      },
+      "line_height_normal": {
+        "label": "Normal Line Height",
+        "description": "Line height for body text",
+        "variable": "--line-height-normal",
+        "default": "1.6",
+        "type": "number",
+        "min": 1.2,
+        "max": 2.0,
+        "step": 0.1
+      }
+    },
+    "spacing": {
+      "spacing_container": {
+        "label": "Container Padding",
+        "description": "Horizontal padding for main container",
+        "variable": "--container-padding",
+        "default": "3rem",
+        "type": "size",
+        "unit": "rem",
+        "min": 1,
+        "max": 5,
+        "step": 0.5
+      },
+      "spacing_section": {
+        "label": "Section Spacing",
+        "description": "Vertical spacing between sections",
+        "variable": "--spacing-5xl",
+        "default": "6rem",
+        "type": "size",
+        "unit": "rem",
+        "min": 3,
+        "max": 10,
+        "step": 1
+      },
+      "spacing_element": {
+        "label": "Element Spacing",
+        "description": "Spacing between elements",
+        "variable": "--spacing-2xl",
+        "default": "3rem",
+        "type": "size",
+        "unit": "rem",
+        "min": 1.5,
+        "max": 5,
+        "step": 0.5
+      }
+    },
+    "layout": {
+      "container_max_width": {
+        "label": "Container Max Width",
+        "description": "Maximum width of main content container",
+        "variable": "--container-max-width",
+        "default": "1200px",
+        "type": "size",
+        "unit": "px",
+        "min": 960,
+        "max": 1600,
+        "step": 40
+      },
+      "border_radius": {
+        "label": "Border Radius",
+        "description": "Border radius for cards and elements",
+        "variable": "--border-radius-lg",
+        "default": "0.5rem",
+        "type": "size",
+        "unit": "rem",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.125
+      },
+      "card_style": {
+        "label": "Card Style",
+        "description": "Style of category and article cards",
+        "variable": "--card-style",
+        "default": "minimal",
+        "type": "select",
+        "options": [
+          {
+            "label": "Minimal",
+            "value": "minimal"
+          },
+          {
+            "label": "Bordered",
+            "value": "bordered"
+          },
+          {
+            "label": "Flat",
+            "value": "flat"
+          }
+        ]
+      }
+    },
+    "effects": {
+      "hover_effect": {
+        "label": "Hover Effect",
+        "description": "Hover effect for interactive elements",
+        "variable": "--hover-effect",
+        "default": "subtle",
+        "type": "select",
+        "options": [
+          {
+            "label": "Subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "Lift",
+            "value": "lift"
+          },
+          {
+            "label": "None",
+            "value": "none"
+          }
+        ]
+      },
+      "transition_speed": {
+        "label": "Transition Speed",
+        "description": "Speed of hover and focus transitions",
+        "variable": "--transition-normal",
+        "default": "0.3s",
+        "type": "select",
+        "options": [
+          {
+            "label": "Fast (0.2s)",
+            "value": "0.2s"
+          },
+          {
+            "label": "Normal (0.3s)",
+            "value": "0.3s"
+          },
+          {
+            "label": "Slow (0.5s)",
+            "value": "0.5s"
+          }
+        ]
+      }
+    }
+  },
+  "sections": {
+    "header": {
+      "name": "Header",
+      "description": "Top navigation and branding area",
+      "customizable": true,
+      "fields": [
+        {
+          "name": "site_title",
+          "label": "Site Title",
+          "type": "text",
+          "default": "Help Center",
+          "required": true
+        },
+        {
+          "name": "show_alert_banner",
+          "label": "Show Alert Banner",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "alert_message",
+          "label": "Alert Message",
+          "type": "text",
+          "default": "Important update",
+          "condition": "show_alert_banner"
+        }
+      ]
+    },
+    "hero": {
+      "name": "Hero Section",
+      "description": "Main welcome area with search",
+      "customizable": true,
+      "fields": [
+        {
+          "name": "hero_title",
+          "label": "Hero Title",
+          "type": "text",
+          "default": "How can we help you?",
+          "required": true
+        },
+        {
+          "name": "hero_subtitle",
+          "label": "Hero Subtitle",
+          "type": "text",
+          "default": "Find answers to your questions quickly and easily",
+          "required": true
+        },
+        {
+          "name": "search_placeholder",
+          "label": "Search Placeholder",
+          "type": "text",
+          "default": "Search for articles..."
+        },
+        {
+          "name": "hero_background",
+          "label": "Hero Background",
+          "type": "select",
+          "default": "white",
+          "options": [
+            {
+              "label": "White",
+              "value": "white"
+            },
+            {
+              "label": "Light Gray",
+              "value": "light-gray"
+            },
+            {
+              "label": "Minimal Gradient",
+              "value": "minimal-gradient"
+            }
+          ]
+        }
+      ]
+    },
+    "categories": {
+      "name": "Categories Section",
+      "description": "Browse by category area",
+      "customizable": true,
+      "fields": [
+        {
+          "name": "categories_title",
+          "label": "Section Title",
+          "type": "text",
+          "default": "Browse Categories",
+          "required": true
+        },
+        {
+          "name": "categories_subtitle",
+          "label": "Section Subtitle",
+          "type": "text",
+          "default": "Find what you're looking for"
+        },
+        {
+          "name": "categories_per_row",
+          "label": "Categories Per Row",
+          "type": "number",
+          "default": 3,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "name": "show_category_icons",
+          "label": "Show Category Icons",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "show_article_count",
+          "label": "Show Article Count",
+          "type": "boolean",
+          "default": true
+        }
+      ]
+    },
+    "articles": {
+      "name": "Featured Articles",
+      "description": "Showcase popular articles",
+      "customizable": true,
+      "fields": [
+        {
+          "name": "articles_title",
+          "label": "Section Title",
+          "type": "text",
+          "default": "Featured Articles",
+          "required": true
+        },
+        {
+          "name": "articles_subtitle",
+          "label": "Section Subtitle",
+          "type": "text",
+          "default": "Popular and helpful articles"
+        },
+        {
+          "name": "articles_per_row",
+          "label": "Articles Per Row",
+          "type": "number",
+          "default": 2,
+          "min": 1,
+          "max": 3
+        },
+        {
+          "name": "show_article_date",
+          "label": "Show Article Date",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "show_article_description",
+          "label": "Show Article Description",
+          "type": "boolean",
+          "default": true
+        }
+      ]
+    },
+    "contact": {
+      "name": "Contact Section",
+      "description": "Contact call-to-action area",
+      "customizable": true,
+      "fields": [
+        {
+          "name": "contact_title",
+          "label": "Contact Title",
+          "type": "text",
+          "default": "Still need help?",
+          "required": true
+        },
+        {
+          "name": "contact_subtitle",
+          "label": "Contact Subtitle",
+          "type": "text",
+          "default": "Get in touch with our support team"
+        },
+        {
+          "name": "contact_button_text",
+          "label": "Contact Button Text",
+          "type": "text",
+          "default": "Contact Support"
+        },
+        {
+          "name": "contact_button_url",
+          "label": "Contact Button URL",
+          "type": "url",
+          "default": "/contact"
+        }
+      ]
+    },
+    "footer": {
+      "name": "Footer",
+      "description": "Bottom navigation and links",
+      "customizable": true,
+      "fields": [
+        {
+          "name": "show_social_links",
+          "label": "Show Social Links",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "copyright_text",
+          "label": "Copyright Text",
+          "type": "text",
+          "default": "© 2024 Your Company. All rights reserved."
+        },
+        {
+          "name": "show_powered_by",
+          "label": "Show Powered By",
+          "type": "boolean",
+          "default": true
+        }
+      ]
+    }
+  },
+  "features": [
+    "Minimalist design",
+    "Generous white space",
+    "Responsive layout",
+    "Accessibility compliant",
+    "Single accent color",
+    "Clean typography",
+    "Subtle animations",
+    "Mobile-first approach",
+    "Fast loading",
+    "Modern aesthetics"
+  ],
+  "compatibility": {
+    "browsers": [
+      "Chrome 90+",
+      "Firefox 88+",
+      "Safari 14+",
+      "Edge 90+"
+    ],
+    "devices": [
+      "Desktop",
+      "Tablet",
+      "Mobile"
+    ]
+  },
+  "files": {
+    "pages": [
+      "Pages/401.jsx",
+      "Pages/404.jsx",
+      "Pages/500.jsx",
+      "Pages/article.jsx",
+      "Pages/categories.jsx",
+      "Pages/contact.jsx",
+      "Pages/conversation.jsx",
+      "Pages/conversations.jsx",
+      "Pages/homepage.jsx",
+      "Pages/login.jsx",
+      "Pages/search.jsx",
+      "Pages/survey.jsx",
+      "Pages/tag.jsx"
+    ],
+    "components": [
+      "Components/Announcement.jsx",
+      "Components/ArticleBreadcrumbs.jsx",
+      "Components/ArticleItem.jsx",
+      "Components/CategoriesSection.jsx",
+      "Components/CategoryBlock.jsx",
+      "Components/ContactUs.jsx",
+      "Components/ConversationBreadcrumbs.jsx",
+      "Components/ConversationDetails.jsx",
+      "Components/ConversationStatus.jsx",
+      "Components/FeaturedArticles.jsx",
+      "Components/Footer.jsx",
+      "Components/HeroImage.jsx",
+      "Components/Nav.jsx",
+      "Components/NavSearch.jsx",
+      "Components/Page.jsx",
+      "Components/SearchHeader.jsx",
+      "Components/SearchHeaderWithSuggestions.jsx",
+      "Components/SearchItem.jsx",
+      "Components/SubcategoryItem.jsx"
+    ],
+    "globals": [
+      "Globals/styles.css",
+      "Globals/portal.css",
+      "Globals/form.css",
+      "Globals/survey.css",
+      "Globals/recaptcha.css",
+      "Globals/utils.js"
+    ],
+    "advanced": [
+      "Advanced/manifest.json"
+    ],
+    "template": "index.html",
+    "config": "theme.json"
+  }
+} 

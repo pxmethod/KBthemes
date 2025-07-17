@@ -1,0 +1,1700 @@
+/*
+
+  ==============================
+  Table of Contents
+  ==============================
+
+	1.0 Globals
+	2.0 Icons
+  3.0 Main Containers
+	4.0 Buttons
+	5.0 Forms
+	6.0 Pages
+	6.1 Homepage
+	6.2 Article page
+	6.3 Search page
+	6.4 Category page
+	6.5 404 page
+	7.0 Components
+	7.1 Nav
+	7.2 Hero Image
+	7.3 Footer
+	7.4 Category Component
+	7.5 Search Header
+	7.6 Article Breadcrumbs
+  7.7 Article Item
+  7.8 Subcategory Item
+  7.9 Announcement
+	8.0 Utilities
+*/
+
+/* let's set up some variables */
+:root {
+    --headingsAndButtonsFont: "Helvetica";
+    --headingBaseSizeFont: 36px;
+    --bodyTextFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --baseSizeFont: 16px;
+    --headingsColor: #0a3355;
+    --bodyTextColor: #222222;
+    --secondaryTextColor: #576977;
+    --linksColor: #0a3355;
+    --linksColorLightened: #0a3355; /* keep for backwards compatibility */
+    --linkTextHoverColor: #005fad;
+    --primaryButtonColor: #0a3355;
+    --primaryButtonColorLightened: #0a3355; /* keep for backwards compatibility */
+    --primaryButtonTextColor: #ffffff;
+    --primaryButtonBackgroundHoverColor: #005fad;
+    --primaryButtonTextHoverColor: #ffffff;
+    --primaryBackgroundPageColor: #ffffff;
+    --secondaryBackgroundPageColor: #f9f9f9;
+    --borderPageColor: #b2b2b2;
+  }
+  
+  /*
+    ==============================
+    1.0 Globals
+    ==============================
+  */
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  html {
+    height: 100%;
+    font-size: 16px;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #222222;
+    /* font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    */
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+    color: var(--bodyTextColor);
+  }
+  
+  body {
+    min-height: 100%;
+    background-color: #ffffff;
+    background-color: var(--primaryBackgroundPageColor);
+  }
+  
+  a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    color: #0a3355;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: var(--linksColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  a:hover {
+    color: #005fad; /** fallback */
+    color: var(--linkTextHoverColor);
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Helvetica";
+    font-family: var(--headingsAndButtonsFont);
+  }
+  
+  blockquote {
+    padding-left: 4rem;
+    position: relative;
+    margin-bottom: 2rem;
+    font-style: italic;
+    line-height: 1.618rem;
+  }
+  
+  blockquote:before {
+    content: "\F756";
+    position: absolute;
+    left: 1rem;
+    color: #576977;
+    font-family: "Material Design Icons";
+    font-style: normal;
+    font-size: 2.5rem;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  code {
+    background-color: #f9f9f9 !important;
+    color: #d72b3f !important;
+    font-size: 0.75rem;
+    padding: 2px 3px 1px;
+    white-space: normal;
+  }
+  
+  code,
+  pre {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace !important;
+    border: 1px solid #d8d8d8 !important; /* :\ */
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.2rem;
+    -webkit-font-variant-ligatures: none;
+    font-variant-ligatures: none;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    -webkit-tab-size: 4;
+  }
+  
+  pre {
+    background-color: #efefef;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    padding: 1.5rem;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  th,
+  td {
+    margin: 0;
+  }
+  
+  table tbody {
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+    background-color: #fefefe;
+  }
+  
+  table tbody th,
+  table tbody td {
+    padding: 0.5rem 0.625rem 0.625rem;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+    background-color: var(--primaryBackgroundPageColor) !important;
+  }
+  
+  button {
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+  
+    border-color: #0a3355;
+    border-color: var(--primaryButtonColor);
+  
+    background-color: #0a3355;
+    background-color: var(--primaryButtonColor);
+  
+    color: #ffffff;
+    color: var(--primaryButtonTextColor);
+  
+    /* inherit font from ancestor */
+    font: inherit;
+  
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+  
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+  
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+  }
+  
+  /* Remove excess padding and border in Firefox 4+ */
+  button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  
+  button:hover,
+  button a:hover {
+    color: #ffffff;
+    color: var(--primaryButtonTextHoverColor);
+    background-color: #005fad;
+    background-color: var(--primaryButtonBackgroundHoverColor);
+    -webkit-transition: background-color, color 500ms ease-in-out;
+    -ms-transition: background-color, color 500ms ease-in-out;
+    transition: background-color, color 500ms ease-in-out;
+  }
+  
+  .svg {
+    display: inline-block;
+    vertical-align: middle;
+    pointer-events: none;
+  }
+  
+  /*
+    ==============================
+    2.0 Icons
+    ==============================
+  */
+  
+  /*
+    ==============================
+    3.0 Main Containers
+    ==============================
+  */
+  
+  .main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .main-layout-deflection-padding {
+    padding-bottom: 70px;
+  }
+  
+  .container {
+    max-width: 1440px;
+    padding: 0 10px;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .featured-articles-container {
+    background-color: #ffffff;
+    background-color: var(--primaryBackgroundPageColor);
+  }
+  
+  .container-home {
+    flex: 1 1 auto; /** IE11 needs explicit 3 values */
+    margin: 1.5rem;
+  }
+  
+  .container-contact {
+    background-color: #f9f9f9;
+    background-color: var(--secondaryBackgroundPageColor);
+    height: 100vh;
+  }
+  
+  .contact-wrapper {
+    padding: 60px 80px !important;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    background-color: var(--primaryBackgroundPageColor);
+  }
+  
+  .contact-wrapper hr {
+    display: none;
+  }
+  
+  .categories-container,
+  .contact-us-container {
+    background-color: #f9f9f9;
+    background-color: var(--secondaryBackgroundPageColor);
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .container-contact {
+      background-color: #ffffff;
+      background-color: var(--primaryBackgroundPageColor);
+    }
+  
+    .contact-wrapper {
+      box-shadow: none;
+      padding: 0 !important;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .container-home {
+      max-width: 940px;
+      margin: 4rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1022px) {
+    .container-home {
+      width: 100%;
+      margin: 4rem auto;
+    }
+  }
+  
+  /*
+    ==============================
+    4.0 Buttons
+    ==============================
+  */
+  
+  .btn {
+    border: 1px solid transparent;
+    padding: 0.675rem 0.875rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+  }
+  
+  .btn:disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+  
+  .btn-submit {
+    font-weight: bold;
+  }
+  
+  .btn-secondary {
+    background-color: #f8fafc;
+    color: #4894c8;
+    border: 1px solid #e9eff4;
+    border-radius: 3px;
+  }
+  
+  .btn-icon {
+    background-color: transparent;
+    color: #9c9fa8;
+    padding: 0.2rem;
+  }
+  
+  .btn-icon .mdi {
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .btn-icon.btn-md {
+    padding: 0.25rem;
+    font-size: 1.25rem;
+  }
+  
+  .btn-icon:hover {
+    background-color: #005fad;
+  }
+  
+  .btn-icon:hover .mdi:before {
+    color: #ffffff;
+  }
+  
+  .btn-sml {
+    font-size: 0.75rem;
+  }
+  
+  a.btn {
+    color: #ffffff;
+  }
+  
+  .btn-arrow-right {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 1.25rem;
+  }
+  
+  /*
+    ==============================
+    5.0 Forms
+    ==============================
+  */
+  
+  ::-webkit-input-placeholder {
+    color: #576977;
+    color: var(--secondaryTextColor);
+  }
+  ::-moz-placeholder {
+    color: #576977;
+    color: var(--secondaryTextColor);
+  }
+  :-ms-input-placeholder {
+    color: #576977;
+    color: var(--secondaryTextColor);
+  }
+  
+  .form-control {
+    border: 1px solid #b2b2b2;
+    color: #576977;
+    border: 1px solid var(--borderPageColor);
+    color: var(--secondaryTextColor);
+    border-radius: 7px;
+    outline: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1rem;
+  }
+  
+  /*
+    ==============================
+    6.0 Pages
+    ==============================
+  */
+  
+  /*
+    ==============================
+    6.1 Homepage
+    ==============================
+  */
+  
+  .container-header {
+    font-size: 21px;
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .container-header {
+      max-width: 100%;
+    }
+  }
+  
+  .contact-us-button-section-container {
+    padding-top: 10px;
+  }
+  
+  .contact-us-button-wrapper {
+    display: flex;
+    margin: 0 auto;
+  }
+  
+  .contact-us-button {
+    background-color: #0a3355;
+    color: #ffffff;
+    background-color: var(--primaryButtonColor);
+    color: var(--primaryButtonTextColor);
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    width: max-content;
+    margin: 0 auto;
+  }
+  
+  .searchBar-primaryMessage,
+  .category-primaryText,
+  .featuredArticles-primaryText,
+  .contactUs-primaryText,
+  .conversations-primaryText {
+    font-family: "Helvetica";
+    font-size: 36px;
+    color: #0a3355;
+    font-family: var(--headingsAndButtonsFont);
+    font-size: var(--headingBaseSizeFont);
+    color: var(--headingsColor);
+  }
+  
+  .searchBar-secondaryMessage,
+  .category-secondaryText,
+  .featuredArticles-secondaryText,
+  .contactUs-secondaryText,
+  .conversations-secondaryText {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #222222;
+    font-size: var(--baseSizeFont);
+    font-family: var(--bodyTextFont);
+    color: var(--bodyTextColor);
+  }
+  
+  .contactUs-ctaText {
+    font-family: "Helvetica";
+    font-family: var(--headingsAndButtonsFont);
+  }
+  
+  /*
+    ==============================
+    6.2 Article page
+    ==============================
+  */
+  .article-title,
+  .category-title {
+    font-weight: bold;
+    padding: 15px 0;
+    color: #0a3355;
+    font-family: "Helvetica";
+    font-size: 36px;
+    color: var(--headingsColor);
+    font-family: var(--headingsAndButtonsFont);
+    font-size: var(--headingBaseSizeFont);
+  }
+  
+  .article-body {
+    flex: 1 1 auto;
+  }
+  
+  .article-body-content {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #222222;
+    font-size: var(--baseSizeFont);
+    font-family: var(--bodyTextFont);
+    color: var(--bodyTextColor);
+  }
+  
+  .article-header {
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+  }
+  
+  .article-body blockquote {
+    border: none;
+    padding-left: 4em;
+    color: #222222;
+    color: var(--bodyTextColor);
+  }
+  
+  body[dir="rtl"] blockquote {
+    padding-left: initial;
+    padding-right: 4em;
+  }
+  
+  body[dir="rtl"] blockquote:before {
+    left: auto;
+    right: 1rem;
+  }
+  
+  .article-body p {
+    margin-bottom: 1rem;
+    line-height: 1.618rem;
+  }
+  
+  .article-body .article-updated {
+    margin-bottom: 1rem;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 14px;
+    color: #576977;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: var(--secondaryTextColor);
+    font-family: var(--bodyTextFont);
+  }
+  
+  .article-body img.img-inline {
+    margin-bottom: 0;
+    display: inline-block;
+  }
+  
+  .article-body ul,
+  .article-body ol {
+    margin-bottom: 2rem;
+  }
+  
+  .article-body ul ul,
+  .article-body ul ol,
+  .article-body ol ul,
+  .article-body ol ol {
+    margin-bottom: 0;
+  }
+  
+  .article-body ul li {
+    line-height: 1.618rem;
+  }
+  
+  .article-left {
+    width: 100%;
+  }
+  
+  .article-right {
+    min-width: 150px;
+    height: 100%;
+    padding: 25px;
+    border-radius: 3px;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    background-color: var(--secondaryBackgroundPageColor);
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .article-right {
+      width: 150px;
+      margin-left: 25px;
+      margin-top: 0;
+    }
+  }
+  
+  .tag-text {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #576977;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: var(--secondaryTextColor);
+    font-family: var(--bodyTextFont);
+  }
+  
+  .tag-wrap {
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .ql-align-center {
+    text-align: center;
+  }
+  
+  iframe.ql-video {
+    width: 100%;
+    height: 50%;
+  }
+  
+  /*
+    ==============================
+      6.3 Search page
+    ==============================
+  */
+  
+  .search-results-number {
+    color: #ffffff;
+    display: block;
+    font-weight: 500;
+    font-family: "Helvetica";
+    font-size: 36px;
+    font-family: var(--headingsAndButtonsFont);
+    font-size: var(--headingBaseSizeFont);
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .search-results-number {
+      display: inline;
+    }
+  }
+  
+  .no-results-copy {
+    color: #222222;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: var(--bodyTextColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  /*
+    ==============================
+    6.4 Category Page
+    ==============================
+  */
+  
+  .category-description {
+    color: #222222;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: var(--bodyTextColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+    margin-bottom: 20px;
+  }
+  
+  .link-return {
+    color: #0a3355;
+    color: var(--linksColor);
+  }
+  
+  .subheader-label {
+    margin: 20px auto;
+    font-family: "Helvetica";
+    color: #0a3355;
+    font-family: var(--headingsAndButtonsFont);
+    color: var(--headingsColor);
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .category-col-wrap {
+      display: flex;
+    }
+  
+    .category-right {
+      flex: 1 1 auto;
+      margin: 0 auto;
+    }
+  }
+  
+  /*
+    ==============================
+    6.5 404 Page
+    ==============================
+  */
+  
+  .fourOhFour-wrap {
+    padding: 1rem 0 1.5rem;
+    text-align: center;
+  }
+  
+  .fourOhFour-header {
+    font-size: 0.6667rem;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 0.6667rem;
+    width: 140px;
+    margin: 0 auto 1.333rem;
+    color: #576977;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    border-bottom: 3px solid #b2b2b2;
+  
+    color: var(--secondaryTextColor);
+    font-family: var(--bodyTextFont);
+    border-bottom: 3px solid var(--borderPageColor);
+  }
+  
+  .fourOhFour-icon {
+    font-size: 1.5rem;
+  }
+  
+  .fourOhFour-image {
+    display: block;
+    margin: 3rem auto;
+    max-width: 100%;
+  }
+  
+  .fourOhFour-subheader {
+    margin-bottom: 1.333rem;
+    font-family: "Helvetica";
+    font-size: 36px;
+    color: #0a3355;
+    font-family: var(--headingsAndButtonsFont);
+    font-size: var(--headingBaseSizeFont);
+    color: var(--headingsColor);
+  }
+  
+  .fourOhFour-body {
+    margin-bottom: 25px;
+    color: #222222;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: var(--bodyTextColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  .fourOhFour-search {
+    margin: 2.611rem auto;
+    max-width: 462px;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .fourOhFour-search.form-control-search -wrap {
+      margin-top: 2.611rem;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .fourOhFour-subheader {
+      font-size: 2rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) {
+    .fourOhFour-wrap {
+      padding: 3.444rem 9.444rem 5.556rem;
+    }
+  }
+  
+  /* 
+    ==============================
+    7.0 Components
+    ==============================
+  */
+  
+  /*
+    ==============================
+    7.1 Nav
+    ==============================
+  */
+  
+  .nav {
+    padding: 0.5rem;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 2px 6px 0 rgba(167, 167, 167, 0.5);
+    z-index: 1;
+    background-color: #ffffff;
+    background-color: var(--primaryBackgroundPageColor);
+  }
+  
+  .language-select {
+    /* arrows */
+    background-image: linear-gradient(45deg, transparent 50%, #0a3355 50%),
+      linear-gradient(135deg, #0a3355 50%, transparent 50%),
+      linear-gradient(to right, #ffffff, #ffffff);
+    background-image: linear-gradient(
+        45deg,
+        transparent 50%,
+        var(--linksColor) 50%
+      ),
+      linear-gradient(135deg, var(--linksColor) 50%, transparent 50%),
+      linear-gradient(
+        to right,
+        var(--primaryBackgroundPageColor),
+        var(--primaryBackgroundPageColor)
+      );
+    background-position: calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+  
+    /* styling */
+    display: inline-block;
+    line-height: 1.5em;
+    padding: 0.5em 2em 0.5em 1em;
+    border: none;
+    background-color: #ffffff;
+    color: #0a3355;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    width: 160px;
+  
+    background-color: var(--primaryBackgroundPageColor);
+    color: var(--linksColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  
+    /* reset */
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .language-select {
+      margin-top: 10px;
+    }
+  }
+  
+  .language-select::-ms-expand {
+    /** hide native select arrow in IE */
+    display: none;
+  }
+  
+  .language-select:hover {
+    color: #005fad; /** fallback */
+    color: var(--linkTextHoverColor);
+  
+    /* arrows */
+    background-image: linear-gradient(45deg, transparent 50%, #0a3355 50%),
+      linear-gradient(135deg, #0a3355 50%, transparent 50%),
+      linear-gradient(to right, #ffffff, #ffffff);
+    background-image: linear-gradient(
+        45deg,
+        transparent 50%,
+        var(--linkTextHoverColor) 50%
+      ),
+      linear-gradient(135deg, var(--linkTextHoverColor) 50%, transparent 50%),
+      linear-gradient(
+        to right,
+        var(--primaryBackgroundPageColor),
+        var(--primaryBackgroundPageColor)
+      );
+  }
+  
+  .header-links {
+    color: #0a3355;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+  
+    color: var(--linksColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  .header-logo {
+    height: 40px;
+    display: block;
+    max-width: 250px;
+  }
+  
+  .nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .nav-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-list-mobile {
+    color: #0a3355;
+    color: var(--headingsColor);
+    height: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 6px 0 rgba(167, 167, 167, 0.5);
+  }
+  
+  .lock-body {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .nav-list-item {
+    font-size: 0.75rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  
+  .nav-list-item-mobile {
+    padding: 20px 0;
+    width: 100%;
+  }
+  
+  .nav-mobile-menu-icon {
+    color: #0a3355;
+    color: var(--headingsColor);
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .nav-main-text {
+    color: #fff;
+    background-color: #0a3355;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    text-align: center;
+    z-index: 0;
+    height: 400px;
+  }
+  
+  .container-max-width {
+    max-width: 600px !important;
+  }
+  
+  .nav-search {
+    display: flex;
+    padding: 25px 0;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .nav {
+      padding: 1rem;
+    }
+  
+    .nav-main-text {
+      padding: 50px;
+    }
+  }
+  
+  /*
+    ==============================
+    7.2 Hero Image
+    ==============================
+  */
+  
+  .heroImage {
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  /*
+    ==============================
+    7.3 Footer
+    ==============================
+  */
+  
+  .footer {
+    padding: 40px;
+    color: #ffffff;
+    background-color: #0a3355;
+    font-size: 14px;
+  }
+  
+  .footer .wrap {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .footer-list-item {
+    text-align: center;
+    width: auto;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer a:hover {
+    color: white;
+  }
+  
+  .footer-back-to-top-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .footer-back-to-top {
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  .footer-back-to-top-arrow {
+    margin-left: 5px;
+    line-height: 20px;
+  }
+  
+  .footer-secondary {
+    margin-top: 20px;
+    color: #bfbfbf;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-copyright,
+  .footer-powered {
+    margin-bottom: 15px;
+    color: #939fa8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: var(--secondaryTextColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  .footer-social-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .footer-social-item {
+    font-size: 20px;
+    padding: 0 5px;
+  }
+  
+  .footer-links {
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  @media (min-width: 768px) {
+    .footer-container {
+      display: flex;
+      flex-flow: wrap;
+    }
+  
+    .footer-secondary {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  
+    .footer-back-to-top {
+      justify-content: flex-end;
+    }
+  }
+  
+  /*
+    ==============================
+    7.4 Category
+    ==============================
+  */
+  
+  .category-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+  
+  .category-wrap-left-aligned {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .article-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between !important;
+    padding-top: 10px !important;
+  }
+  
+  .no-categories-wrap {
+    margin-top: 20px;
+  }
+  
+  .category-block-item {
+    -webkit-transition: all 0.2s;
+    padding: 20px;
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px 0 rgba(130, 130, 130, 0.5);
+    border: solid 1px #f9f9f9;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    flex: 1 1 auto;
+    width: 100%;
+    color: #0a3355;
+    font-family: "Helvetica";
+    color: var(--headingsColor);
+    font-family: var(--headingsAndButtonsFont);
+  }
+  
+  .category-block-item-nested-categories {
+    padding: 20px;
+    display: flex;
+  }
+  
+  .cat-block-icon {
+    display: flex;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+  }
+  
+  .cat-block-title {
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+  }
+  
+  .cat-block-description {
+    font-size: 0.7778rem;
+    display: none;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* hack to create fake invisible element to occupy same width as elements */
+    .category-wrap-left-aligned::after {
+      content: "";
+      width: 48%;
+    }
+  
+    .category-block-item {
+      max-width: none;
+      min-height: 150px;
+      flex: 0 48%;
+      width: 48%; /** need to set for ie11 */
+      max-width: 48%; /** need to set for ie11 */
+      margin-left: 1%;
+      margin-right: 1%;
+      margin-bottom: 2%;
+    }
+  
+    .category-block-item:hover {
+      background: #ffffff;
+      border-radius: 6px;
+    }
+  
+    .article-wrap {
+      flex-direction: row;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) {
+    /* hack to create fake invisible element to occupy same width as elements */
+    .category-wrap-left-aligned::after {
+      content: "";
+      width: 33%;
+    }
+  
+    .category-block-item {
+      flex: 0 31%;
+      width: 31%; /** need to set for ie11 */
+      max-width: 31%; /** need to set for ie11 */
+    }
+  }
+  
+  /*
+    ==============================
+    7.5 Search Header
+    ==============================
+  */
+  
+  .form-control-search {
+    border-radius: 30px;
+    padding-left: 3rem;
+    width: 100%;
+    transition: border-color 0.2s ease-in-out;
+    color: #222222;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: var(--bodyTextColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  .form-control-search-placeholder {
+    pointer-events: none;
+    position: absolute;
+    text-align: left;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    color: #576977;
+    color: var(--secondaryTextColor);
+  }
+  
+  .form-control-search-placeholder > div {
+    padding-left: 50px;
+    padding-right: 20px;
+    padding-top: 15px;
+    position: relative;
+    height: inherit;
+    width: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .form-control-search:focus {
+    border-color: #2d96cd;
+  }
+  
+  .form-control-search:focus + .form-control-search-placeholder {
+    display: none;
+  }
+  
+  .form-control-search-wrap {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .form-control-search-wrap .icon-search {
+    position: absolute;
+    left: 1rem;
+    top: 12px;
+    font-size: 1.5rem;
+    color: #8b97a1;
+  }
+  
+  .header-secondaryMessage {
+    font-weight: 400;
+    margin: 15px 0;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .header-secondaryMessage {
+      margin: 30px 0;
+    }
+  
+    .nav-main-text .form-control-search-wrap,
+    .nav-search .form-control-search-wrap {
+      width: 50%;
+    }
+  }
+  
+  .search-sml-wrap {
+    margin-bottom: 20px;
+  }
+  
+  .search-sml-wrap .icon-search {
+    left: 0.75rem;
+    top: 9px;
+  }
+  
+  .search-sml-wrap .form-control-search {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 2.5rem;
+  }
+  
+  .tag-term {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #0a3355;
+    font-family: "Helvetica";
+    color: var(--headingsColor);
+    font-family: var(--headingsAndButtonsFont);
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .search-sml-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .search-sml-wrap .form-control-search {
+      width: 350px;
+    }
+  }
+  
+  /*
+    ==============================
+    7.6 Article Breadcrumbs
+    ==============================
+  */
+  
+  .breadcrumbs-wrap {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    flex-wrap: wrap;
+  }
+  
+  .breadcrumb {
+    color: #1b394e;
+    letter-spacing: -0.1px;
+    color: #0a3355;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: var(--headingsColor);
+    font-size: var(--baseSizeFont);
+    font-family: var(--bodyTextFont);
+  }
+  
+  /*
+    ==============================
+    7.7 Article Item
+    ==============================
+  */
+  
+  .article-item {
+    margin-top: 20px;
+    margin-bottom: 2%;
+    flex: 0 49%;
+    width: 49%; /** need to set for ie11 */
+    max-width: 49%; /** need to set for ie11 */
+  }
+  
+  .article-item:last-child .hr {
+    display: none;
+  }
+  
+  .article-item-search {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  
+  .article-item-header-wrap {
+    transition: color 0.2s ease-in-out;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+  }
+  
+  .article-item-header-wrap:hover .article-item-header-icon:before {
+    color: inherit !important;
+  }
+  
+  .article-item-header-icon {
+    margin-left: 5px;
+  }
+  
+  .article-item-header-wrap:hover {
+    text-decoration: underline;
+  }
+  
+  .article-item-header-wrap:hover .btn-icon {
+    background-color: #005fad;
+  }
+  
+  .article-item-header-wrap:hover .mdi:before {
+    color: #ffffff;
+  }
+  
+  .article-item-header-wrap .btn-icon {
+    font-size: 1.25rem;
+  }
+  
+  .article-item-header {
+    font-weight: bold;
+    font-size: 16px;
+    color: #0a3355;
+    font-family: "Helvetica";
+    font-size: var(--baseSizeFont);
+    color: var(--headingsColor);
+    font-family: var(--headingsAndButtonsFont);
+  }
+  
+  .article-item-header:hover {
+    color: #005fad; /** fallback */
+    color: var(--linkTextHoverColor);
+  }
+  
+  .article-item-time {
+    font-size: 12px;
+    padding-top: 10px;
+    color: #576977;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: var(--secondaryTextColor);
+    font-family: var(--bodyTextFont);
+  }
+  
+  .article-item-body {
+    padding: 0.5rem 0 1rem;
+    color: #222222;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: var(--bodyTextColor);
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  .article-item .hr {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .article-item {
+      flex: 1 1 auto;
+      width: 100%; /** need to set for ie11 */
+      max-width: 100%; /** need to set for ie11 */
+    }
+    .article-item .hr {
+      display: block;
+    }
+  }
+  
+  /*
+    ==============================
+    7.8 Subcategory Item
+    ==============================
+  */
+  
+  .subcat-item-header-wrap {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .subcat-item-header {
+    text-align: center;
+  }
+  
+  /*
+    ==============================
+    7.9 Announcement
+    ==============================
+  */
+  
+  .announcement-bar-container {
+    background-color: #e16360;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-family: var(--bodyTextFont);
+    font-size: var(--baseSizeFont);
+  }
+  
+  .announcement-bar-text {
+    margin: 0 5px;
+  }
+  
+  .announcement-bar-close {
+    color: #ffffff;
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .announcement-bar-container {
+      flex-direction: column;
+    }
+  
+    .announcement-bar-close {
+      right: 10px;
+    }
+  }
+  
+  .announcement-bar-cta {
+    color: #ffffff;
+    text-decoration: underline;
+    margin-left: 5px;
+  }
+  
+  /*
+    ==============================
+    8.0 Utilities
+    ==============================
+  */
+  
+  .pull-right {
+    float: right;
+  }
+  
+  .pull-left {
+    float: left;
+  }
+  
+  .fz14 {
+    font-size: 0.7778rem;
+    display: none;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .m1rem {
+    margin: 1rem;
+  }
+  
+  .mt5 {
+    margin-top: 0.3571rem;
+  }
+  
+  .mt10 {
+    margin-top: 0.7142rem;
+  }
+  
+  .mr5 {
+    margin-right: 0.3571rem;
+  }
+  
+  .mb5 {
+    margin-bottom: 0.3571rem;
+  }
+  
+  .mb2rem {
+    margin-bottom: 2rem;
+  }
+  
+  .ml5 {
+    margin-left: 0.3571rem;
+  }
+  
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  /* For vertical text ellipses */
+  .text-overflow {
+    display: block;
+    /* Fallback for non-webkit */
+    display: -webkit-box;
+    /* Fallback for non-webkit */
+    margin: 0 auto;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+  
+  .img-inline {
+    display: inline;
+    margin: 0;
+    vertical-align: bottom;
+  }
+  
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .hr {
+    background: #eeeeee;
+    height: 1px;
+    border: none;
+  }
+  

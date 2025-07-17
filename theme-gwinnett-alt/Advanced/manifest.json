@@ -1,0 +1,61 @@
+{
+  "name": "gwinnett-alt",
+  "displayName": "Gwinnett Alt",
+  "description": "A documentation-focused variant of the Gwinnett theme featuring a two-column layout with sidebar navigation, expandable categories, and content-first design perfect for knowledge bases and help centers.",
+  "author": "Kustomer Templates",
+  "version": "1.0.0",
+  "style": "documentation-focused",
+  "generated": "2024-12-20T00:00:00.000Z",
+  "structure": {
+    "advanced": ["manifest.json"],
+    "components": [
+      "Page.jsx", "Nav.jsx", "Sidebar.jsx", "DocumentationLayout.jsx",
+      "CategoryNavigation.jsx", "HelpWidget.jsx", "MainContent.jsx",
+      "CategoryCard.jsx", "Footer.jsx", "Announcement.jsx",
+      "ArticleBreadcrumbs.jsx", "ConversationBreadcrumbs.jsx",
+      "SearchHeader.jsx"
+    ],
+    "globals": [
+      "styles.css", "portal.css", "form.css", "survey.css", 
+      "recaptcha.css", "utils.js"
+    ],
+    "pages": [
+      "homepage.jsx", "article.jsx", "categories.jsx", "search.jsx",
+      "contact.jsx", "login.jsx", "conversation.jsx", "conversations.jsx",
+      "survey.jsx", "tag.jsx", "404.jsx", "401.jsx", "500.jsx"
+    ]
+  },
+  "colors": {
+    "primary": "#6366f1",
+    "secondary": "#8b5cf6", 
+    "accent": "#06b6d4",
+    "background": "#ffffff",
+    "text": "#1f2937",
+    "border": "#e5e7eb",
+    "gradient_start": "#667eea",
+    "gradient_end": "#764ba2"
+  },
+  "design_features": {
+    "layout": "Two-column documentation layout with sidebar navigation",
+    "sidebar": "Fixed sidebar with expandable category navigation",
+    "typography": "Inter font family with documentation-optimized hierarchy",
+    "gradients": "Subtle gradient backgrounds for sidebar and navigation",
+    "navigation": "Collapsible/expandable navigation tree",
+    "responsive": "Mobile-responsive with collapsible sidebar"
+  },
+  "features": [
+    "Two-Column Documentation Layout",
+    "Expandable Sidebar Navigation", 
+    "Modern Typography (Inter)",
+    "Content-First Design",
+    "Responsive Design",
+    "Accessibility Compliant",
+    "Modern React Components",
+    "Fixed Sidebar with Scroll",
+    "Category Tree Navigation",
+    "Professional Color Palette",
+    "Help Widget Integration",
+    "SEO Optimized",
+    "Cross-browser Compatible"
+  ]
+} 

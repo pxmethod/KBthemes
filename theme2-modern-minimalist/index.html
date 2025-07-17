@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Minimalist Theme - Preview</title>
+    <style>
+        /* Modern Minimalist Theme Preview Styles */
+        
+        /* CSS Custom Properties */
+        :root {
+            /* Colors - Monochromatic with single accent */
+            --mm-white: #ffffff;
+            --mm-light-gray: #f8f9fa;
+            --mm-gray-100: #e9ecef;
+            --mm-gray-200: #dee2e6;
+            --mm-gray-300: #ced4da;
+            --mm-gray-400: #adb5bd;
+            --mm-gray-500: #6c757d;
+            --mm-gray-600: #495057;
+            --mm-gray-700: #343a40;
+            --mm-gray-800: #212529;
+            --mm-black: #000000;
+            --mm-accent: #007bff; /* Single accent color */
+            
+            /* Typography */
+            --mm-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --mm-font-size-xs: 0.75rem;
+            --mm-font-size-sm: 0.875rem;
+            --mm-font-size-base: 1rem;
+            --mm-font-size-lg: 1.125rem;
+            --mm-font-size-xl: 1.25rem;
+            --mm-font-size-2xl: 1.5rem;
+            --mm-font-size-3xl: 1.875rem;
+            --mm-font-size-4xl: 2.25rem;
+            --mm-font-size-5xl: 3rem;
+            
+            /* Spacing - Generous white space */
+            --mm-space-1: 0.25rem;
+            --mm-space-2: 0.5rem;
+            --mm-space-3: 0.75rem;
+            --mm-space-4: 1rem;
+            --mm-space-5: 1.25rem;
+            --mm-space-6: 1.5rem;
+            --mm-space-8: 2rem;
+            --mm-space-10: 2.5rem;
+            --mm-space-12: 3rem;
+            --mm-space-16: 4rem;
+            --mm-space-20: 5rem;
+            --mm-space-24: 6rem;
+            
+            /* Layout */
+            --mm-max-width: 1200px;
+            --mm-border-radius: 0.5rem;
+            --mm-line-height: 1.6;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--mm-font-family);
+            font-size: var(--mm-font-size-base);
+            line-height: var(--mm-line-height);
+            color: var(--mm-gray-800);
+            background-color: var(--mm-white);
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            color: var(--mm-gray-800);
+            margin-bottom: var(--mm-space-4);
+        }
+        
+        h1 { font-size: var(--mm-font-size-5xl); }
+        h2 { font-size: var(--mm-font-size-4xl); }
+        h3 { font-size: var(--mm-font-size-3xl); }
+        h4 { font-size: var(--mm-font-size-2xl); }
+        h5 { font-size: var(--mm-font-size-xl); }
+        h6 { font-size: var(--mm-font-size-lg); }
+        
+        p {
+            margin-bottom: var(--mm-space-4);
+            color: var(--mm-gray-600);
+        }
+        
+        /* Layout */
+        .container {
+            max-width: var(--mm-max-width);
+            margin: 0 auto;
+            padding: 0 var(--mm-space-6);
+        }
+        
+        /* Header */
+        .header {
+            background: var(--mm-white);
+            border-bottom: 1px solid var(--mm-gray-200);
+            padding: var(--mm-space-6) 0;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: var(--mm-font-size-xl);
+            font-weight: 700;
+            color: var(--mm-gray-800);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--mm-space-8);
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--mm-gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--mm-accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--mm-light-gray);
+            padding: var(--mm-space-24) 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: var(--mm-font-size-5xl);
+            font-weight: 300;
+            color: var(--mm-gray-800);
+            margin-bottom: var(--mm-space-6);
+        }
+        
+        .hero p {
+            font-size: var(--mm-font-size-xl);
+            color: var(--mm-gray-600);
+            margin-bottom: var(--mm-space-12);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Search Bar */
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: var(--mm-space-4) var(--mm-space-6);
+            border: 2px solid var(--mm-gray-200);
+            border-radius: var(--mm-border-radius);
+            font-size: var(--mm-font-size-base);
+            background: var(--mm-white);
+            transition: border-color 0.2s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--mm-accent);
+        }
+        
+        .search-button {
+            position: absolute;
+            right: var(--mm-space-2);
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--mm-accent);
+            color: var(--mm-white);
+            border: none;
+            padding: var(--mm-space-2) var(--mm-space-4);
+            border-radius: var(--mm-border-radius);
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        /* Main Content */
+        .main {
+            padding: var(--mm-space-20) 0;
+        }
+        
+        .section {
+            margin-bottom: var(--mm-space-20);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--mm-space-16);
+            font-weight: 300;
+            color: var(--mm-gray-800);
+        }
+        
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--mm-space-8);
+            margin-bottom: var(--mm-space-16);
+        }
+        
+        .category-card {
+            background: var(--mm-white);
+            border: 1px solid var(--mm-gray-200);
+            border-radius: var(--mm-border-radius);
+            padding: var(--mm-space-8);
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--mm-light-gray);
+            border-radius: 50%;
+            margin: 0 auto var(--mm-space-4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--mm-font-size-2xl);
+            color: var(--mm-accent);
+        }
+        
+        .category-card h3 {
+            font-size: var(--mm-font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--mm-space-3);
+        }
+        
+        .category-card p {
+            color: var(--mm-gray-600);
+            margin-bottom: var(--mm-space-4);
+        }
+        
+        .category-link {
+            color: var(--mm-accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--mm-font-size-sm);
+        }
+        
+        /* Featured Articles */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--mm-space-8);
+        }
+        
+        .article-card {
+            background: var(--mm-white);
+            border: 1px solid var(--mm-gray-200);
+            border-radius: var(--mm-border-radius);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-content {
+            padding: var(--mm-space-6);
+        }
+        
+        .article-meta {
+            color: var(--mm-gray-500);
+            font-size: var(--mm-font-size-sm);
+            margin-bottom: var(--mm-space-3);
+        }
+        
+        .article-title {
+            font-size: var(--mm-font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--mm-space-3);
+            color: var(--mm-gray-800);
+        }
+        
+        .article-excerpt {
+            color: var(--mm-gray-600);
+            line-height: 1.6;
+            margin-bottom: var(--mm-space-4);
+        }
+        
+        .article-link {
+            color: var(--mm-accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--mm-font-size-sm);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--mm-light-gray);
+            padding: var(--mm-space-16) 0 var(--mm-space-8);
+            border-top: 1px solid var(--mm-gray-200);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--mm-space-8);
+            margin-bottom: var(--mm-space-8);
+        }
+        
+        .footer-section h4 {
+            color: var(--mm-gray-800);
+            margin-bottom: var(--mm-space-4);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--mm-space-2);
+        }
+        
+        .footer-links a {
+            color: var(--mm-gray-600);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--mm-accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--mm-space-8);
+            border-top: 1px solid var(--mm-gray-200);
+            color: var(--mm-gray-500);
+            font-size: var(--mm-font-size-sm);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: var(--mm-font-size-4xl);
+            }
+            
+            .hero p {
+                font-size: var(--mm-font-size-lg);
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Help Center</a>
+                <ul class="nav-links">
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>How can we help you?</h1>
+            <p>Find answers to your questions quickly and easily. Search our knowledge base or browse categories below.</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for articles...">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Categories Section -->
+            <section class="section">
+                <h2 class="section-title">Browse Categories</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">📚</div>
+                        <h3>Getting Started</h3>
+                        <p>Learn the basics and get up and running quickly with our comprehensive guides.</p>
+                        <a href="#" class="category-link">View Articles →</a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">⚙️</div>
+                        <h3>Account Settings</h3>
+                        <p>Manage your account preferences, security settings, and profile information.</p>
+                        <a href="#" class="category-link">View Articles →</a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🔧</div>
+                        <h3>Troubleshooting</h3>
+                        <p>Find solutions to common problems and technical issues you might encounter.</p>
+                        <a href="#" class="category-link">View Articles →</a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">💡</div>
+                        <h3>Tips & Tricks</h3>
+                        <p>Discover advanced features and best practices to get the most out of our platform.</p>
+                        <a href="#" class="category-link">View Articles →</a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🤝</div>
+                        <h3>Integration</h3>
+                        <p>Connect with third-party tools and services to enhance your workflow.</p>
+                        <a href="#" class="category-link">View Articles →</a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">📊</div>
+                        <h3>Analytics</h3>
+                        <p>Understand your data and metrics with our comprehensive analytics guides.</p>
+                        <a href="#" class="category-link">View Articles →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Articles Section -->
+            <section class="section">
+                <h2 class="section-title">Featured Articles</h2>
+                <div class="articles-grid">
+                    <article class="article-card">
+                        <div class="article-content">
+                            <div class="article-meta">Getting Started • 5 min read</div>
+                            <h3 class="article-title">How to Create Your First Project</h3>
+                            <p class="article-excerpt">Learn the essential steps to set up your first project and start building amazing things with our platform.</p>
+                            <a href="#" class="article-link">Read Article →</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-content">
+                            <div class="article-meta">Account Settings • 3 min read</div>
+                            <h3 class="article-title">Securing Your Account</h3>
+                            <p class="article-excerpt">Best practices for keeping your account secure, including two-factor authentication and password management.</p>
+                            <a href="#" class="article-link">Read Article →</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-content">
+                            <div class="article-meta">Troubleshooting • 7 min read</div>
+                            <h3 class="article-title">Common Login Issues</h3>
+                            <p class="article-excerpt">Having trouble logging in? Here's a comprehensive guide to resolve the most common authentication problems.</p>
+                            <a href="#" class="article-link">Read Article →</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-content">
+                            <div class="article-meta">Tips & Tricks • 4 min read</div>
+                            <h3 class="article-title">Keyboard Shortcuts Guide</h3>
+                            <p class="article-excerpt">Boost your productivity with these essential keyboard shortcuts that will save you time and effort.</p>
+                            <a href="#" class="article-link">Read Article →</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Help Center</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Browse Categories</a></li>
+                        <li><a href="#">Search Articles</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Report an Issue</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Status Page</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Social Media</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

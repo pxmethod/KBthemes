@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gwinnett Theme Demo - Modern Knowledge Base</title>
+    <link rel="stylesheet" href="Globals/styles.css">
+    <style>
+        .demo-notice {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: var(--spacing-md) 0;
+            text-align: center;
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .demo-features {
+            padding: var(--spacing-5xl) 0;
+            background: var(--background-secondary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-3xl);
+        }
+        
+        .feature-card {
+            background: var(--background-primary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-md);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-notice">
+        🎨 This is a demo of the Gwinnett Knowledge Base Theme - Explore the modern design!
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="/" class="logo">Gwinnett Demo</a>
+                </div>
+                
+                <nav class="header-nav" role="navigation">
+                    <ul class="nav-menu">
+                        <li><a href="/" class="nav-link active">Demo</a></li>
+                        <li><a href="#features" class="nav-link">Features</a></li>
+                        <li><a href="#components" class="nav-link">Components</a></li>
+                        <li><a href="index.html" class="nav-link">Full Preview</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-right">
+                    <a href="#contact" class="btn btn-primary">Try It Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Gwinnett</h1>
+                <p class="hero-subtitle">Experience the future of knowledge base design with modern gradients, professional typography, and intuitive layouts that your users will love.</p>
+                
+                <div class="search-section">
+                    <div class="search-container">
+                        <form class="search-form">
+                            <input 
+                                type="search" 
+                                class="search-input" 
+                                placeholder="Try searching: 'getting started', 'billing', 'integration'..."
+                                aria-label="Demo search"
+                            />
+                            <button type="button" class="search-button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Demo Section -->
+    <section class="demo-features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Theme Features</h2>
+                <p class="section-subtitle">Discover what makes the Gwinnett theme perfect for modern knowledge bases.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Modern Gradients</h3>
+                    <p>Beautiful gradient backgrounds that create depth and visual interest throughout the interface.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Perfectly optimized for all devices with mobile-first responsive grid layouts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>High Performance</h3>
+                    <p>Optimized CSS and lightweight code for fast loading and excellent user experience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>Accessibility First</h3>
+                    <p>WCAG 2.1 AA compliant with full keyboard navigation and screen reader support.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Easy Customization</h3>
+                    <p>CSS variables and modular components make customization simple and straightforward.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Modern Tech Stack</h3>
+                    <p>Built with React components, CSS Grid, and modern web standards for future-proof design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Categories -->
+    <section class="categories-section" id="components">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Component Showcase</h2>
+                <p class="section-subtitle">See how the theme's components work together to create an engaging user experience.</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">🎯</span>
+                    </div>
+                    <h3 class="category-title">Design System</h3>
+                    <p class="category-description">Consistent spacing, typography, and color system that scales beautifully.</p>
+                    <div class="category-meta">
+                        <span class="article-count">Complete system</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </div>
+
+                <div class="category-card card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">💎</span>
+                    </div>
+                    <h3 class="category-title">Premium Components</h3>
+                    <p class="category-description">Beautiful cards, buttons, and interactive elements with smooth animations.</p>
+                    <div class="category-meta">
+                        <span class="article-count">All included</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </div>
+
+                <div class="category-card card">
+                    <div class="category-icon">
+                        <span role="img" aria-hidden="true">🎨</span>
+                    </div>
+                    <h3 class="category-title">Visual Excellence</h3>
+                    <p class="category-description">Thoughtfully designed gradients, shadows, and typography for professional appeal.</p>
+                    <div class="category-meta">
+                        <span class="article-count">Modern aesthetic</span>
+                        <span class="category-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-support-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to Get Started?</h2>
+                <p class="section-subtitle">Transform your knowledge base with the modern, professional design of the Gwinnett theme.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span role="img" aria-hidden="true">📖</span>
+                    </div>
+                    <h3 class="contact-title">Documentation</h3>
+                    <p class="contact-description">Complete setup guide, component API, and customization instructions.</p>
+                    <a href="README.md" class="btn btn-primary">Read Docs</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span role="img" aria-hidden="true">👀</span>
+                    </div>
+                    <h3 class="contact-title">Live Preview</h3>
+                    <p class="contact-description">See the complete theme in action with all components and sections.</p>
+                    <a href="index.html" class="btn btn-primary">View Preview</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <span role="img" aria-hidden="true">⚡</span>
+                    </div>
+                    <h3 class="contact-title">Quick Start</h3>
+                    <p class="contact-description">Get up and running quickly with our installation and setup guide.</p>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Gwinnett Theme</h4>
+                    <a href="index.html">Live Preview</a>
+                    <a href="README.md">Documentation</a>
+                    <a href="demo.html">Demo</a>
+                    <a href="theme.json">Configuration</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="#features">Modern Design</a>
+                    <a href="#components">Components</a>
+                    <a href="#features">Responsive</a>
+                    <a href="#features">Accessible</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="Globals/styles.css">Styles</a>
+                    <a href="Components/">Components</a>
+                    <a href="Advanced/manifest.json">Manifest</a>
+                    <a href="README.md">Setup Guide</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <a href="#" target="_blank">React Components</a>
+                    <a href="#" target="_blank">CSS Grid</a>
+                    <a href="#" target="_blank">CSS Variables</a>
+                    <a href="#" target="_blank">Inter Font</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gwinnett Theme. A modern knowledge base theme built with ❤️ for better user experiences.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Globals/utils.js"></script>
+</body>
+</html> 

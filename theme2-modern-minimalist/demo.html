@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Minimalist Theme - Demo</title>
+    <link rel="stylesheet" href="Globals/styles.css">
+    <style>
+        /* Demo-specific styles */
+        .demo-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .demo-section {
+            border-top: 1px solid var(--border-light);
+            padding-top: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .demo-section:first-child {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        
+        .demo-title {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-light);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .demo-description {
+            font-size: var(--font-size-base);
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .component-showcase {
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .breadcrumb-demo {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .article-demo {
+            background: var(--background-secondary);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .search-demo {
+            background: var(--background-primary);
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .contact-demo {
+            background: var(--background-secondary);
+            padding: var(--spacing-4xl) 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        🎨 Modern Minimalist Theme Demo - Showcasing clean design and minimal aesthetics
+    </div>
+
+    <!-- Header -->
+    <header class="mm-header">
+        <div class="mm-container">
+            <!-- Alert Banner -->
+            <div class="mm-alert-banner">
+                <div class="mm-alert-content">
+                    <span class="mm-alert-text">📢 Welcome to our updated help center with a fresh new look!</span>
+                    <button class="mm-alert-close" onclick="this.parentElement.parentElement.style.display='none'" aria-label="Close alert">&times;</button>
+                </div>
+            </div>
+            
+            <!-- Main Header -->
+            <div class="mm-header-content">
+                <div class="mm-header-left">
+                    <h1 class="mm-site-title">Help Center</h1>
+                </div>
+                <div class="mm-header-right">
+                    <a href="#" class="mm-back-link">← Back to Main Site</a>
+                    <select class="mm-language-select">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Demo Content -->
+    <main class="mm-main">
+        <div class="mm-container">
+            <!-- Hero Section Demo -->
+            <section class="demo-section">
+                <h2 class="demo-title">Hero Section</h2>
+                <p class="demo-description">The hero section features clean typography, generous white space, and a centered search experience.</p>
+                
+                <div class="mm-hero-section">
+                    <div class="mm-hero-content">
+                        <h1 class="mm-hero-title">How can we help you?</h1>
+                        <p class="mm-hero-subtitle">Find answers to your questions quickly and easily with our comprehensive knowledge base</p>
+                        
+                        <div class="mm-search-container">
+                            <form class="mm-search-form">
+                                <div class="mm-search-input-wrapper">
+                                    <span class="mm-search-icon">🔍</span>
+                                    <input type="text" class="mm-search-input" placeholder="Search for articles, guides, or FAQs..." />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breadcrumbs Demo -->
+            <section class="demo-section">
+                <h2 class="demo-title">Breadcrumbs</h2>
+                <p class="demo-description">Clean navigation breadcrumbs for article and conversation pages.</p>
+                
+                <div class="component-showcase">
+                    <div class="breadcrumb-demo">
+                        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-md); color: var(--text-secondary);">Article Breadcrumbs</h3>
+                        <nav class="mm-breadcrumbs" aria-label="Article breadcrumb navigation">
+                            <ol class="mm-breadcrumb-list">
+                                <li class="mm-breadcrumb-item">
+                                    <a href="#" class="mm-breadcrumb-link">Home</a>
+                                </li>
+                                <li class="mm-breadcrumb-separator" aria-hidden="true">/</li>
+                                <li class="mm-breadcrumb-item">
+                                    <a href="#" class="mm-breadcrumb-link">Getting Started</a>
+                                </li>
+                                <li class="mm-breadcrumb-separator" aria-hidden="true">/</li>
+                                <li class="mm-breadcrumb-item mm-breadcrumb-current">
+                                    <span class="mm-breadcrumb-text mm-breadcrumb-current-text" aria-current="page">Account Setup Guide</span>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    
+                    <div class="breadcrumb-demo">
+                        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-md); color: var(--text-secondary);">Conversation Breadcrumbs</h3>
+                        <nav class="mm-breadcrumbs" aria-label="Conversation breadcrumb navigation">
+                            <ol class="mm-breadcrumb-list">
+                                <li class="mm-breadcrumb-item">
+                                    <a href="#" class="mm-breadcrumb-link">Home</a>
+                                </li>
+                                <li class="mm-breadcrumb-separator" aria-hidden="true">/</li>
+                                <li class="mm-breadcrumb-item">
+                                    <a href="#" class="mm-breadcrumb-link">Conversations</a>
+                                </li>
+                                <li class="mm-breadcrumb-separator" aria-hidden="true">/</li>
+                                <li class="mm-breadcrumb-item mm-breadcrumb-current">
+                                    <span class="mm-breadcrumb-text mm-breadcrumb-current-text" aria-current="page">Support Request #12345</span>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Categories Section Demo -->
+            <section class="demo-section">
+                <h2 class="demo-title">Categories Section</h2>
+                <p class="demo-description">Clean category cards with minimal styling and subtle hover effects.</p>
+                
+                <div class="mm-categories-section">
+                    <div class="mm-section-header">
+                        <h2 class="mm-section-title">Browse Categories</h2>
+                        <p class="mm-section-subtitle">Find what you're looking for in our organized knowledge base</p>
+                    </div>
+                    
+                    <div class="mm-categories-grid">
+                        <a href="#" class="mm-category-card">
+                            <div class="mm-category-icon">📚</div>
+                            <h3 class="mm-category-title">Getting Started</h3>
+                            <p class="mm-category-description">Learn the basics and get up and running quickly with our platform</p>
+                            <span class="mm-category-count">12 articles</span>
+                        </a>
+                        
+                        <a href="#" class="mm-category-card">
+                            <div class="mm-category-icon">⚙️</div>
+                            <h3 class="mm-category-title">Account Settings</h3>
+                            <p class="mm-category-description">Manage your account, preferences, and security settings</p>
+                            <span class="mm-category-count">8 articles</span>
+                        </a>
+                        
+                        <a href="#" class="mm-category-card">
+                            <div class="mm-category-icon">🔧</div>
+                            <h3 class="mm-category-title">Troubleshooting</h3>
+                            <p class="mm-category-description">Find solutions to common problems and technical issues</p>
+                            <span class="mm-category-count">15 articles</span>
+                        </a>
+                        
+                        <a href="#" class="mm-category-card">
+                            <div class="mm-category-icon">💡</div>
+                            <h3 class="mm-category-title">Tips & Tricks</h3>
+                            <p class="mm-category-description">Get the most out of our platform with expert tips</p>
+                            <span class="mm-category-count">10 articles</span>
+                        </a>
+                        
+                        <a href="#" class="mm-category-card">
+                            <div class="mm-category-icon">🤝</div>
+                            <h3 class="mm-category-title">Integration</h3>
+                            <p class="mm-category-description">Connect with third-party tools and services</p>
+                            <span class="mm-category-count">6 articles</span>
+                        </a>
+                        
+                        <a href="#" class="mm-category-card">
+                            <div class="mm-category-icon">📊</div>
+                            <h3 class="mm-category-title">Analytics</h3>
+                            <p class="mm-category-description">Understand your data and track your progress</p>
+                            <span class="mm-category-count">9 articles</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Articles Section Demo -->
+            <section class="demo-section">
+                <div class="article-demo">
+                    <div class="mm-container">
+                        <h2 class="demo-title">Featured Articles</h2>
+                        <p class="demo-description">Showcase important articles with clean cards and minimal styling.</p>
+                        
+                        <div class="mm-articles-section">
+                            <div class="mm-section-header">
+                                <h2 class="mm-section-title">Popular Articles</h2>
+                                <p class="mm-section-subtitle">Most helpful articles from our knowledge base</p>
+                            </div>
+                            
+                            <div class="mm-articles-grid">
+                                <a href="#" class="mm-article-item">
+                                    <div class="mm-article-header">
+                                        <span class="mm-article-date">March 15, 2024</span>
+                                    </div>
+                                    <h3 class="mm-article-title">Getting Started with Your Account</h3>
+                                    <p class="mm-article-description">Learn how to set up your account, configure basic settings, and get started with our platform in just a few minutes.</p>
+                                </a>
+                                
+                                <a href="#" class="mm-article-item">
+                                    <div class="mm-article-header">
+                                        <span class="mm-article-date">March 12, 2024</span>
+                                    </div>
+                                    <h3 class="mm-article-title">Advanced Security Settings</h3>
+                                    <p class="mm-article-description">Protect your account with two-factor authentication, secure passwords, and advanced security features.</p>
+                                </a>
+                                
+                                <a href="#" class="mm-article-item">
+                                    <div class="mm-article-header">
+                                        <span class="mm-article-date">March 10, 2024</span>
+                                    </div>
+                                    <h3 class="mm-article-title">Troubleshooting Common Issues</h3>
+                                    <p class="mm-article-description">Quick solutions for the most common problems and errors you might encounter while using our platform.</p>
+                                </a>
+                                
+                                <a href="#" class="mm-article-item">
+                                    <div class="mm-article-header">
+                                        <span class="mm-article-date">March 8, 2024</span>
+                                    </div>
+                                    <h3 class="mm-article-title">Integration Best Practices</h3>
+                                    <p class="mm-article-description">Learn how to integrate our platform with your existing tools and workflows for maximum efficiency.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search Results Demo -->
+            <section class="demo-section">
+                <div class="search-demo">
+                    <div class="mm-container">
+                        <h2 class="demo-title">Search Results</h2>
+                        <p class="demo-description">Clean search interface with minimal result cards.</p>
+                        
+                        <div class="mm-search-container" style="margin-bottom: var(--spacing-2xl);">
+                            <form class="mm-search-form">
+                                <div class="mm-search-input-wrapper">
+                                    <span class="mm-search-icon">🔍</span>
+                                    <input type="text" class="mm-search-input" value="account setup" placeholder="Search for articles..." />
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div style="text-align: left; margin-bottom: var(--spacing-lg);">
+                            <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Found 3 results for "account setup"</p>
+                        </div>
+                        
+                        <div class="mm-articles-grid">
+                            <a href="#" class="mm-article-item">
+                                <div class="mm-article-header">
+                                    <span class="mm-article-date">March 15, 2024</span>
+                                </div>
+                                <h3 class="mm-article-title">Getting Started with Your Account</h3>
+                                <p class="mm-article-description">Learn how to set up your <strong>account</strong>, configure basic settings, and get started with our platform...</p>
+                            </a>
+                            
+                            <a href="#" class="mm-article-item">
+                                <div class="mm-article-header">
+                                    <span class="mm-article-date">March 12, 2024</span>
+                                </div>
+                                <h3 class="mm-article-title">Account Configuration Guide</h3>
+                                <p class="mm-article-description">Complete guide to <strong>account setup</strong> and configuration options for new users...</p>
+                            </a>
+                            
+                            <a href="#" class="mm-article-item">
+                                <div class="mm-article-header">
+                                    <span class="mm-article-date">March 10, 2024</span>
+                                </div>
+                                <h3 class="mm-article-title">Account Security Setup</h3>
+                                <p class="mm-article-description">Secure your <strong>account</strong> during the initial <strong>setup</strong> process with these essential security steps...</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section Demo -->
+            <section class="demo-section">
+                <div class="contact-demo">
+                    <div class="mm-container">
+                        <h2 class="demo-title">Contact Section</h2>
+                        <p class="demo-description">Clean call-to-action section with minimal styling.</p>
+                        
+                        <div class="mm-contact-section">
+                            <div class="mm-contact-content">
+                                <h2 class="mm-contact-title">Still need help?</h2>
+                                <p class="mm-contact-subtitle">Can't find what you're looking for? Our support team is here to help you get the answers you need.</p>
+                                <a href="#" class="mm-contact-button">Contact Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mm-footer">
+        <div class="mm-container">
+            <div class="mm-footer-content">
+                <nav class="mm-footer-nav">
+                    <a href="#">About</a>
+                    <a href="#">Help</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </nav>
+                
+                <div class="mm-footer-secondary">
+                    <div class="mm-footer-links">
+                        <a href="#" class="mm-footer-link">Privacy Policy</a>
+                        <a href="#" class="mm-footer-link">Terms of Service</a>
+                        <a href="#" class="mm-footer-link">Cookie Policy</a>
+                    </div>
+                    
+                    <div class="mm-social-links">
+                        <a href="#" class="mm-social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="mm-social-link" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="mm-social-link" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mm-footer-bottom">
+                <p class="mm-copyright">© 2024 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="mm-back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- Demo JavaScript -->
+    <script>
+        // Back to top functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Search functionality demo
+        const searchInputs = document.querySelectorAll('.mm-search-input');
+        searchInputs.forEach(input => {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    alert('Search functionality would be implemented here!');
+                }
+            });
+        });
+        
+        // Category and article card interactions
+        const cards = document.querySelectorAll('.mm-category-card, .mm-article-item');
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const title = card.querySelector('.mm-category-title, .mm-article-title').textContent;
+                alert(`Clicked on: ${title}`);
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,670 @@
+{
+  "version": 2,
+  "design": {
+    "name": "design",
+    "variables": {
+      "font": {
+        "type": "section",
+        "name": "font",
+        "label": "",
+        "variables": {
+          "headingsAndButtonsFont": {
+            "type": "select",
+            "name": "headingsAndButtonsFont",
+            "label": "",
+            "enum": [
+              {
+                "label": "Arial",
+                "value": "arial"
+              },
+              {
+                "label": "Verdana",
+                "value": "verdana"
+              },
+              {
+                "label": "Helvetica",
+                "value": "helvetica"
+              },
+              {
+                "label": "Tahoma",
+                "value": "tahoma"
+              },
+              {
+                "label": "Times New Roman",
+                "value": "times-new-roman"
+              },
+              {
+                "label": "Georgia",
+                "value": "georgia"
+              },
+              {
+                "label": "Garamond",
+                "value": "garamond"
+              },
+              {
+                "label": "Courier New",
+                "value": "courier-new"
+              }
+            ],
+            "value": "Helvetica"
+          },
+          "headingBaseSizeFont": {
+            "type": "slider",
+            "name": "headingBaseSizeFont",
+            "label": "",
+            "value": "36px"
+          },
+          "bodyTextFont": {
+            "type": "select",
+            "name": "bodyTextFont",
+            "label": "",
+            "enum": [
+              {
+                "label": "Arial",
+                "value": "arial"
+              },
+              {
+                "label": "Verdana",
+                "value": "verdana"
+              },
+              {
+                "label": "Helvetica",
+                "value": "helvetica"
+              },
+              {
+                "label": "Tahoma",
+                "value": "tahoma"
+              },
+              {
+                "label": "Times New Roman",
+                "value": "times-new-roman"
+              },
+              {
+                "label": "Georgia",
+                "value": "georgia"
+              },
+              {
+                "label": "Garamond",
+                "value": "garamond"
+              },
+              {
+                "label": "Courier New",
+                "value": "courier-new"
+              }
+            ],
+            "value": "Helvetica"
+          },
+          "baseSizeFont": {
+            "type": "slider",
+            "name": "baseSizeFont",
+            "label": "",
+            "value": "16px"
+          }
+        }
+      },
+      "colors": {
+        "type": "section",
+        "name": "colors",
+        "label": "",
+        "variables": {
+          "font": {
+            "type": "group",
+            "name": "font",
+            "label": "",
+            "variables": {
+              "headingsColor": {
+                "type": "color",
+                "name": "headingsColor",
+                "label": "",
+                "value": "#0A3355"
+              },
+              "bodyTextColor": {
+                "type": "color",
+                "name": "bodyTextColor",
+                "label": "",
+                "value": "#222222"
+              },
+              "secondaryTextColor": {
+                "type": "color",
+                "name": "secondaryTextColor",
+                "label": "",
+                "value": "#576977"
+              },
+              "linksColor": {
+                "type": "color",
+                "name": "linksColor",
+                "label": "",
+                "value": "#0A3355"
+              },
+              "linkTextHoverColor": {
+                "type": "color",
+                "name": "linkTextHoverColor",
+                "label": "",
+                "value": "#005FAD"
+              }
+            }
+          },
+          "buttons": {
+            "type": "group",
+            "name": "buttons",
+            "label": "",
+            "variables": {
+              "primaryButtonColor": {
+                "type": "color",
+                "name": "primaryButtonColor",
+                "label": "",
+                "value": "#0A3355"
+              },
+              "primaryButtonTextColor": {
+                "type": "color",
+                "name": "primaryButtonTextColor",
+                "label": "",
+                "value": "#ffffff"
+              },
+              "primaryButtonBackgroundHoverColor": {
+                "type": "color",
+                "name": "primaryButtonBackgroundHoverColor",
+                "label": "",
+                "value": "#005FAD"
+              },
+              "primaryButtonTextHoverColor": {
+                "type": "color",
+                "name": "primaryButtonTextHoverColor",
+                "label": "",
+                "value": "#ffffff"
+              }
+            }
+          },
+          "page": {
+            "type": "group",
+            "name": "page",
+            "label": "",
+            "variables": {
+              "primaryBackgroundPageColor": {
+                "type": "color",
+                "name": "primaryBackgroundPageColor",
+                "label": "",
+                "value": "#ffffff"
+              },
+              "secondaryBackgroundPageColor": {
+                "type": "color",
+                "name": "secondaryBackgroundPageColor",
+                "label": "",
+                "value": "#F9F9F9"
+              },
+              "borderPageColor": {
+                "type": "color",
+                "name": "borderPageColor",
+                "label": "",
+                "value": "#B2B2B2"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pages": {
+    "homepage": {
+      "type": "page",
+      "name": "homepage",
+      "variables": {
+        "announcement": {
+          "type": "section",
+          "name": "announcement",
+          "label": "[[ sn.kustomer.themebuilder.announcement_label ]]",
+          "enabled": true,
+          "variables": {
+            "homepageOnly": {
+              "type": "boolean",
+              "name": "homepageOnly",
+              "label": "[[ sn.kustomer.themebuilder.announcement_show_on_home_page_label ]]",
+              "value": false
+            },
+            "announcementText": {
+              "type": "text",
+              "name": "announcementText",
+              "label": "[[ sn.kustomer.themebuilder.announcement_text_value ]]",
+              "value": "Important update about our holiday hours"
+            },
+            "textColor": {
+              "type": "color",
+              "name": "textColor",
+              "label": "[[ sn.kustomer.themebuilder.announcement_text_color_label ]]",
+              "value": "#FFFFFF"
+            },
+            "backgroundColor": {
+              "type": "color",
+              "name": "backgroundColor",
+              "label": "[[ sn.kustomer.themebuilder.announcement_background_color_label ]]",
+              "value": "#E16360"
+            },
+            "ctaText": {
+              "type": "string",
+              "name": "ctaText",
+              "label": "[[ sn.kustomer.themebuilder.cta_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.announcement_cta_text_value\" />"
+            },
+            "ctaTextColor": {
+              "type": "color",
+              "name": "ctaTextColor",
+              "label": "[[ sn.kustomer.themebuilder.announcement_cta_text_color_label ]]",
+              "value": "#FFFFFF"
+            },
+            "ctaLink": {
+              "type": "link",
+              "name": "ctaLink",
+              "label": "[[ sn.kustomer.themebuilder.cta_link_label ]]",
+              "value": ""
+            }
+          }
+        },
+        "header": {
+          "type": "section",
+          "name": "header",
+          "label": "[[ sn.kustomer.themebuilder.header_label ]]",
+          "link": {
+            "label": "[[ sn.kustomer.themebuilder.header_link_label ]]",
+            "description": "[[ sn.kustomer.themebuilder.header_link_description ]]",
+            "buttonText": "[[ sn.kustomer.themebuilder.header_link_button_text ]]",
+            "value": "/app/settings/kb/config"
+          },
+          "variables": {
+            "navigation": {
+              "type": "list",
+              "name": "navigation",
+              "minItems": 1,
+              "maxItems": 5,
+              "label": "[[ sn.kustomer.themebuilder.header_navigation_label ]]",
+              "buttonText": "[[ sn.kustomer.themebuilder.header_navigation_button_text ]]",
+              "value": [
+                {
+                  "navigationText": {
+                    "type": "string",
+                    "name": "navigationText",
+                    "label": "[[ sn.kustomer.themebuilder.navigation_text_label_1 ]]",
+                    "value": ""
+                  },
+                  "navigationLink": {
+                    "type": "link",
+                    "name": "navigationLink",
+                    "label": "[[ sn.kustomer.themebuilder.navigation_link_label_1 ]]",
+                    "value": ""
+                  }
+                },
+                {
+                  "navigationText": {
+                    "type": "string",
+                    "name": "navigationText",
+                    "label": "[[ sn.kustomer.themebuilder.navigation_text_label_1 ]]",
+                    "value": "<Snippet id=\"sn.kustomer.themebuilder.navigation_text_value_1\" />"
+                  },
+                  "navigationLink": {
+                    "type": "link",
+                    "name": "navigationLink",
+                    "label": "[[ sn.kustomer.themebuilder.navigation_link_label_1 ]]",
+                    "value": ""
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "searchBar": {
+          "type": "section",
+          "name": "searchBar",
+          "label": "[[ sn.kustomer.themebuilder.search_bar_label ]]",
+          "variables": {
+            "primaryMessage": {
+              "type": "string",
+              "name": "primaryMessage",
+              "label": "[[ sn.kustomer.themebuilder.search_bar_primary_message_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.search_bar_primary_message_value\" />"
+            },
+            "secondaryMessage": {
+              "type": "text",
+              "name": "secondaryMessage",
+              "label": "[[ sn.kustomer.themebuilder.search_bar_secondary_message_label ]]",
+              "value": "Everything you need to know about Acme Corp"
+            },
+            "overlayTextColor": {
+              "type": "color",
+              "name": "overlayTextColor",
+              "label": "[[ sn.kustomer.themebuilder.search_bar_overlay_text_color_label ]]",
+              "value": "#FFFFFF"
+            },
+            "promptText": {
+              "type": "string",
+              "name": "promptText",
+              "label": "[[ sn.kustomer.themebuilder.search_bar_prompt_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.search_bar_prompt_text_value\" />"
+            },
+            "heroImage": {
+              "type": "file",
+              "name": "heroImage",
+              "label": "[[ sn.kustomer.themebuilder.search_bar_hero_image_label ]]",
+              "value": "https://cdnkb.kustomerapp.com/templates/midtown/images/150x150transparent.png"
+            },
+            "overlayColor": {
+              "type": "color",
+              "name": "overlayColor",
+              "label": "[[ sn.kustomer.themebuilder.search_bar_overlay_color_label ]]",
+              "value": "#0a3355"
+            },
+            "overlayOpacity": {
+              "type": "slider",
+              "name": "overlayOpacity",
+              "label": "[[ sn.kustomer.themebuilder.search_bar_overlay_opacity_label ]]",
+              "value": 10
+            }
+          }
+        },
+        "category": {
+          "type": "section",
+          "name": "category",
+          "label": "[[ sn.kustomer.themebuilder.category_label ]]",
+          "enabled": true,
+          "link": {
+            "label": "[[ sn.kustomer.themebuilder.category_link_label ]]",
+            "description": "[[ sn.kustomer.themebuilder.category_link_description ]]",
+            "learnMoreLink": "https://help.kustomer.com/brands-and-categories-rJEANXXsB#CategoryIcon",
+            "buttonText": "[[ sn.kustomer.themebuilder.category_link_button_text ]]",
+            "value": "/app/settings/kb/categories"
+          },
+          "variables": {
+            "primaryText": {
+              "type": "string",
+              "name": "primaryText",
+              "label": "[[ sn.kustomer.themebuilder.primary_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.category_primary_text_value\" />"
+            },
+            "secondaryText": {
+              "type": "text",
+              "name": "secondaryText",
+              "label": "[[ sn.kustomer.themebuilder.secondary_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.category_secondary_text_value\" />"
+            }
+          }
+        },
+        "featuredArticles": {
+          "type": "section",
+          "name": "featuredArticles",
+          "label": "[[ sn.kustomer.themebuilder.featured_articles_label ]]",
+          "enabled": true,
+          "link": {
+            "label": "[[ sn.kustomer.themebuilder.featured_articles_link_label ]]",
+            "description": "[[ sn.kustomer.themebuilder.featured_articles_link_description ]]",
+            "learnMoreLink": "https://help.kustomer.com/featured-articles-SkWJSGJbO",
+            "buttonText": "[[ sn.kustomer.themebuilder.featured_articles_link_button_text ]]",
+            "value": "/app/settings/kb/articles"
+          },
+          "variables": {
+            "primaryText": {
+              "type": "string",
+              "name": "primaryText",
+              "label": "[[ sn.kustomer.themebuilder.primary_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.featured_articles_label\" />"
+            },
+            "secondaryText": {
+              "type": "text",
+              "name": "secondaryText",
+              "label": "[[ sn.kustomer.themebuilder.secondary_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.featured_articles_secondary_text_value\" />"
+            }
+          }
+        },
+        "contactUs": {
+          "type": "section",
+          "name": "contactUs",
+          "label": "[[ sn.kustomer.themebuilder.contact_us_label ]]",
+          "enabled": true,
+          "variables": {
+            "primaryText": {
+              "type": "string",
+              "name": "primaryText",
+              "label": "[[ sn.kustomer.themebuilder.primary_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.contact_us_primary_text_label\" />"
+            },
+            "secondaryText": {
+              "type": "text",
+              "name": "secondaryText",
+              "label": "[[ sn.kustomer.themebuilder.secondary_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.contact_us_secondary_text_value\" />"
+            },
+            "ctaText": {
+              "type": "string",
+              "name": "ctaText",
+              "label": "[[ sn.kustomer.themebuilder.cta_text_label ]]",
+              "value": "<Snippet id=\"sn.kustomer.themebuilder.contact_us_label\" />"
+            },
+            "ctaLink": {
+              "type": "link",
+              "name": "ctaLink",
+              "label": "[[ sn.kustomer.themebuilder.cta_link_label ]]",
+              "value": ""
+            }
+          }
+        },
+        "footer": {
+          "type": "section",
+          "name": "footer",
+          "label": "[[ sn.kustomer.themebuilder.footer_label ]]",
+          "variables": {
+            "navigation": {
+              "type": "list",
+              "name": "navigation",
+              "minItems": 1,
+              "maxItems": 5,
+              "collapsible": true,
+              "label": "[[ sn.kustomer.themebuilder.footer_navigation_label ]]",
+              "buttonText": "[[ sn.kustomer.themebuilder.footer_navigation_button_text ]]",
+              "value": [
+                {
+                  "navigationText": {
+                    "type": "string",
+                    "name": "navigationText",
+                    "label": "[[ sn.kustomer.themebuilder.navigation_text_label_1 ]]",
+                    "value": "<Snippet id=\"sn.kustomer.themebuilder.navigation_text_value_1\" />"
+                  },
+                  "navigationLink": {
+                    "type": "link",
+                    "name": "navigationLink",
+                    "label": "[[ sn.kustomer.themebuilder.navigation_link_label_1 ]]",
+                    "value": ""
+                  }
+                }
+              ]
+            },
+            "social": {
+              "type": "list",
+              "name": "social",
+              "minItems": 1,
+              "maxItems": 5,
+              "collapsible": true,
+              "label": "[[ sn.kustomer.themebuilder.footer_social_label ]]",
+              "buttonText": "[[ sn.kustomer.themebuilder.footer_social_button_text ]]",
+              "value": [
+                {
+                  "socialIcon": {
+                    "type": "icon",
+                    "name": "socialIcon",
+                    "label": "[[ sn.kustomer.themebuilder.footer_social_icon_label ]]",
+                    "enum": [
+                      {
+                        "label": "facebook",
+                        "value": "facebook"
+                      },
+                      {
+                        "label": "instagram",
+                        "value": "instagram"
+                      },
+                      {
+                        "label": "twitter",
+                        "value": "twitter"
+                      },
+                      {
+                        "label": "pinterest",
+                        "value": "pinterest"
+                      },
+                      {
+                        "label": "linkedin",
+                        "value": "linkedin"
+                      }
+                    ],
+                    "value": "facebook"
+                  },
+                  "socialLink": {
+                    "type": "link",
+                    "name": "socialLink",
+                    "label": "[[ sn.kustomer.themebuilder.footer_social_link_label ]]",
+                    "value": ""
+                  }
+                }
+              ]
+            },
+            "copyrightInfo": {
+              "type": "string",
+              "name": "copyrightInfo",
+              "label": "[[ sn.kustomer.themebuilder.footer_copyright_label ]]",
+              "value": "All rights reserved 2020"
+            },
+            "footerPrimaryTextColor": {
+              "type": "color",
+              "name": "footerPrimaryTextColor",
+              "label": "[[ sn.kustomer.themebuilder.footer_primary_text_color_label ]]",
+              "value": "#FFFFFF"
+            },
+            "footerSecondaryTextColor": {
+              "type": "color",
+              "name": "footerSecondaryTextColor",
+              "label": "[[ sn.kustomer.themebuilder.footer_secondary_text_color_label ]]",
+              "value": "#939FA8"
+            },
+            "footerBackgroundColor": {
+              "type": "color",
+              "name": "footerBackgroundColor",
+              "label": "[[ sn.kustomer.themebuilder.footer_background_color_label ]]",
+              "value": "#0a3355"
+            }
+          }
+        }
+      }
+    },
+    "conversations": {
+      "type": "page",
+      "name": "conversations",
+      "label": "[[ sn.kustomer.themebuilder.conversations_label ]]",
+      "variables": {
+        "primaryText": {
+          "type": "string",
+          "name": "primaryText",
+          "label": "[[ sn.kustomer.themebuilder.primary_text_label ]]",
+          "value": "<Snippet id=\"sn.kustomer.themebuilder.conversations_primary_text_value\" />"
+        },
+        "secondaryText": {
+          "type": "text",
+          "name": "secondaryText",
+          "label": "[[ sn.kustomer.themebuilder.secondary_text_label ]]",
+          "value": "<Snippet id=\"sn.kustomer.themebuilder.conversations_secondary_text_value\" />"
+        },
+        "openStatusTextColor": {
+          "type": "color",
+          "name": "openStatusTextColor",
+          "label": "[[ sn.kustomer.themebuilder.conversations_open_status_text_color_label ]]",
+          "value": "#15CC70"
+        },
+        "openStatusBackgroundColor": {
+          "type": "color",
+          "name": "openStatusBackgroundColor",
+          "label": "[[ sn.kustomer.themebuilder.conversations_open_status_background_color_label ]]",
+          "value": "#e8faf1"
+        },
+        "doneStatusTextColor": {
+          "type": "color",
+          "name": "doneStatusTextColor",
+          "label": "[[ sn.kustomer.themebuilder.conversations_done_status_text_color_label ]]",
+          "value": "#767676"
+        },
+        "doneStatusBackgroundColor": {
+          "type": "color",
+          "name": "doneStatusBackgroundColor",
+          "label": "[[ sn.kustomer.themebuilder.conversations_done_status_background_color_label ]]",
+          "value": "#f1f1f1"
+        },
+        "statusFilterBackgroundColor": {
+          "type": "color",
+          "name": "statusFilterBackgroundColor",
+          "label": "[[ sn.kustomer.themebuilder.conversations_status_filter_background_color_label ]]",
+          "value": "#FFFFFF"
+        },
+        "statusFilterSelectedBackgroundColor": {
+          "type": "color",
+          "name": "statusFilterSelectedBackgroundColor",
+          "label": "[[ sn.kustomer.themebuilder.conversations_status_filter_selected_background_color_label ]]",
+          "value": "#E3E3E3"
+        }
+      }
+    },
+    "conversation": {
+      "type": "page",
+      "name": "conversation",
+      "label": "[[ sn.kustomer.themebuilder.conversation_label ]]",
+      "variables": {
+        "detailsText": {
+          "type": "text",
+          "name": "detailsText",
+          "label": "[[ sn.kustomer.themebuilder.conversation_details_text_label ]]",
+          "value": "<Snippet id=\"sn.kustomer.themebuilder.conversation_details_text_value\" />"
+        },
+        "sendButtonText": {
+          "type": "text",
+          "name": "sendButtonText",
+          "label": "[[ sn.kustomer.themebuilder.conversation_send_button_text_label ]]",
+          "value": "<Snippet id=\"sn.kustomer.themebuilder.conversation_send_button_text_value\" />"
+        },
+        "messageFailedText": {
+          "type": "text",
+          "name": "messageFailedText",
+          "label": "[[ sn.kustomer.themebuilder.conversation_message_failed_text_label ]]",
+          "value": "<Snippet id=\"sn.kustomer.themebuilder.message_error_text\" />"
+        },
+        "messagePendingText": {
+          "type": "text",
+          "name": "messagePendingText",
+          "label": "[[ sn.kustomer.themebuilder.conversation_message_pending_text_label ]]",
+          "value": "<Snippet id=\"sn.kustomer.themebuilder.message_pending_text\" />"
+        },
+        "replyBoxPlaceholderText": {
+          "type": "text",
+          "name": "replyBoxPlaceholderText",
+          "label": "[[ sn.kustomer.themebuilder.conversation_details_reply_placeholder_text_label ]]",
+          "value": "<Snippet id=\"sn.kustomer.themebuilder.conversation_details_reply_placeholder_text_value\" />"
+        },
+        "userMessageBackgroundColor": {
+          "type": "color",
+          "name": "userMessageBackgroundColor",
+          "label": "[[ sn.kustomer.themebuilder.conversation_user_message_background_color_label ]]",
+          "value": "#F4F3F8"
+        },
+        "userMessageTextColor": {
+          "type": "color",
+          "name": "userMessageTextColor",
+          "label": "[[ sn.kustomer.themebuilder.conversation_user_message_text_color_label ]]",
+          "value": "#000000"
+        },
+        "agentMessageBackgroundColor": {
+          "type": "color",
+          "name": "agentMessageBackgroundColor",
+          "label": "[[ sn.kustomer.themebuilder.conversation_agent_message_background_color_label ]]",
+          "value": "#FFF1F0"
+        },
+        "agentMessageTextColor": {
+          "type": "color",
+          "name": "agentMessageTextColor",
+          "label": "[[ sn.kustomer.themebuilder.conversation_agent_message_text_color_label ]]",
+          "value": "#000000"
+        }
+      }
+    }
+  }
+}

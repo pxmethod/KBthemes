@@ -1,0 +1,33 @@
+/* Portal-specific styles for Gwinnett theme */
+
+.portal-container {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  min-height: 100vh;
+  padding: var(--spacing-xl);
+}
+
+.portal-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--background-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.portal-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.portal-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.portal-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+} 

@@ -1,0 +1,35 @@
+{
+  "theme_id": "studious-v1",
+  "api_version": "2.0",
+  "minimum_platform_version": "1.0.0",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "assets": {
+    "stylesheets": [
+      "Globals/styles.css"
+    ],
+    "scripts": [],
+    "fonts": [
+      "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    ]
+  },
+  "customization": {
+    "colors": {
+      "primary": "#1a1a1a",
+      "accent": "#3182ce",
+      "background": "#ffffff"
+    },
+    "layout_options": [
+      "fixed-header",
+      "category-grid",
+      "search-prominent"
+    ]
+  },
+  "responsive_breakpoints": {
+    "mobile": "768px",
+    "tablet": "1024px",
+    "desktop": "1200px"
+  }
+} 

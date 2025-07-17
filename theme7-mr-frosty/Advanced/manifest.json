@@ -1,0 +1,72 @@
+{
+  "theme": {
+    "name": "Webflow Help Center",
+    "version": "1.0.0",
+    "description": "A clean, modern help center theme inspired by premium Webflow templates",
+    "author": "Kustomer Templates",
+    "license": "MIT",
+    "homepage": "https://example.com",
+    "repository": "https://github.com/example/webflow-help-center",
+    "tags": ["webflow", "modern", "clean", "minimal", "help-center", "support"],
+    "preview_url": "index.html",
+    "demo_url": "demo.html"
+  },
+  "structure": {
+    "components": [
+      "Nav.jsx",
+      "Footer.jsx", 
+      "Page.jsx",
+      "HeroSection.jsx",
+      "CategoryGrid.jsx",
+      "PopularTopics.jsx",
+      "ContactSupport.jsx"
+    ],
+    "pages": [
+      "homepage.jsx"
+    ],
+    "styles": [
+      "styles.css"
+    ],
+    "assets": []
+  },
+  "customization": {
+    "colors": {
+      "primary": "#2563eb",
+      "secondary": "#f8fafc",
+      "accent": "#0ea5e9",
+      "text": "#1e293b",
+      "background": "#ffffff"
+    },
+    "fonts": {
+      "primary": "Inter",
+      "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    },
+    "layout": {
+      "container_width": "1200px",
+      "spacing_scale": "0.25rem base",
+      "border_radius": "0.5rem base"
+    }
+  },
+  "features": [
+    "Responsive design",
+    "Clean typography",
+    "Hero section with search",
+    "Category grid layout",
+    "Popular topics section", 
+    "Contact support options",
+    "Modern animations",
+    "Accessibility ready",
+    "SEO optimized structure"
+  ],
+  "browser_support": {
+    "chrome": ">=60",
+    "firefox": ">=60",
+    "safari": ">=12",
+    "edge": ">=79"
+  },
+  "performance": {
+    "css_size": "~15kb gzipped",
+    "load_time": "<2s",
+    "lighthouse_score": "95+"
+  }
+} 

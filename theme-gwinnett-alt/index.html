@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowledgeHub X - Support Center</title>
+    <link rel="stylesheet" href="Globals/styles.css">
+    <style>
+        /* Live Preview Specific Styles */
+        .preview-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--text-white);
+            padding: var(--spacing-md) 0;
+            text-align: center;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 30;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Adjust header to account for banner */
+        .header {
+            top: 48px !important;
+        }
+        
+        /* Adjust sidebar to account for banner */
+        .documentation-sidebar {
+            top: calc(var(--header-height) + 48px) !important;
+            height: calc(100vh - var(--header-height) - 48px) !important;
+        }
+        
+        /* Adjust main content to account for banner */
+        .documentation-main {
+            padding-top: calc(var(--header-height) + 48px) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        ✨ Live Preview: Gwinnett Alt Documentation Theme ✨
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="/" class="logo">
+                    <div class="logo-icon">📚</div>
+                    <div class="logo-text">
+                        <span>Gwinnett Alt</span>
+                        <span class="logo-subtitle">Knowledge Base Theme</span>
+                    </div>
+                </a>
+            </div>
+            
+            <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <button class="nav-link nav-dropdown-toggle" onclick="toggleDropdown()">
+                            <span>Pages</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" id="dropdown-arrow">
+                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </li>
+                    <li><a href="/contact" class="nav-link">Contact</a></li>
+                    <li><a href="/cart" class="nav-link cart-link">Cart(0)</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <a href="/submit-ticket" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-right: var(--spacing-xs);">
+                        <path d="M9 11H15M9 15H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L19.7071 9.70711C19.8946 9.89464 20 10.149 20 10.4142V19C20 20.1046 19.1054 21 18 21H17ZM17 21V11H13V7H7V19H17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Submit ticket
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Documentation Layout -->
+    <div class="documentation-layout">
+        <!-- Sidebar -->
+        <div class="documentation-sidebar">
+            <div class="sidebar-content">
+                <!-- Search Section -->
+                <div class="sidebar-search">
+                    <form class="sidebar-search-form">
+                        <input type="search" class="sidebar-search-input" placeholder="Search for answers..." aria-label="Search documentation" />
+                        <button type="submit" class="sidebar-search-button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Category Navigation -->
+                <nav class="category-navigation">
+                    <div class="nav-item">
+                        <button class="nav-item-toggle expanded" onclick="toggleNavItem('getting-started')">
+                            <div style="display: flex; align-items: center;">
+                                <span class="nav-item-icon" role="img" aria-hidden="true">🚀</span>
+                                Getting started
+                            </div>
+                            <span class="nav-item-chevron">▶</span>
+                        </button>
+                        <div class="nav-item-content expanded" id="nav-content-getting-started">
+                            <div class="nav-subitem"><a href="/docs/quick-start">Quick start guide</a></div>
+                            <div class="nav-subitem"><a href="/docs/installation">Installation</a></div>
+                            <div class="nav-subitem"><a href="/docs/first-steps">First steps</a></div>
+                            <div class="nav-subitem"><a href="/docs/basics">Basic concepts</a></div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <button class="nav-item-toggle" onclick="toggleNavItem('authentication')">
+                            <div style="display: flex; align-items: center;">
+                                <span class="nav-item-icon" role="img" aria-hidden="true">🔐</span>
+                                Authentication
+                            </div>
+                            <span class="nav-item-chevron">▶</span>
+                        </button>
+                        <div class="nav-item-content" id="nav-content-authentication">
+                            <div class="nav-subitem"><a href="/docs/api-keys">API keys</a></div>
+                            <div class="nav-subitem"><a href="/docs/oauth">OAuth 2.0</a></div>
+                            <div class="nav-subitem"><a href="/docs/jwt">JWT tokens</a></div>
+                            <div class="nav-subitem"><a href="/docs/sessions">Session management</a></div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <button class="nav-item-toggle" onclick="toggleNavItem('limits-pricing')">
+                            <div style="display: flex; align-items: center;">
+                                <span class="nav-item-icon" role="img" aria-hidden="true">💰</span>
+                                Limits & pricing
+                            </div>
+                            <span class="nav-item-chevron">▶</span>
+                        </button>
+                        <div class="nav-item-content" id="nav-content-limits-pricing">
+                            <div class="nav-subitem"><a href="/docs/rate-limits">Rate limits</a></div>
+                            <div class="nav-subitem"><a href="/docs/pricing">Pricing plans</a></div>
+                            <div class="nav-subitem"><a href="/docs/usage">Usage tracking</a></div>
+                            <div class="nav-subitem"><a href="/docs/billing">Billing</a></div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <button class="nav-item-toggle" onclick="toggleNavItem('advanced-settings')">
+                            <div style="display: flex; align-items: center;">
+                                <span class="nav-item-icon" role="img" aria-hidden="true">⚙️</span>
+                                Advanced settings
+                            </div>
+                            <span class="nav-item-chevron">▶</span>
+                        </button>
+                        <div class="nav-item-content" id="nav-content-advanced-settings">
+                            <div class="nav-subitem"><a href="/docs/config">Configuration</a></div>
+                            <div class="nav-subitem"><a href="/docs/env-vars">Environment variables</a></div>
+                            <div class="nav-subitem"><a href="/docs/domains">Custom domains</a></div>
+                            <div class="nav-subitem"><a href="/docs/ssl">SSL certificates</a></div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <button class="nav-item-toggle" onclick="toggleNavItem('api-endpoints')">
+                            <div style="display: flex; align-items: center;">
+                                <span class="nav-item-icon" role="img" aria-hidden="true">🔌</span>
+                                API endpoints
+                            </div>
+                            <span class="nav-item-chevron">▶</span>
+                        </button>
+                        <div class="nav-item-content" id="nav-content-api-endpoints">
+                            <div class="nav-subitem"><a href="/docs/rest-api">REST API</a></div>
+                            <div class="nav-subitem"><a href="/docs/graphql">GraphQL</a></div>
+                            <div class="nav-subitem"><a href="/docs/webhooks">Webhooks</a></div>
+                            <div class="nav-subitem"><a href="/docs/sdk">SDK reference</a></div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <button class="nav-item-toggle" onclick="toggleNavItem('enterprise-features')">
+                            <div style="display: flex; align-items: center;">
+                                <span class="nav-item-icon" role="img" aria-hidden="true">🏢</span>
+                                Enterprise features
+                            </div>
+                            <span class="nav-item-chevron">▶</span>
+                        </button>
+                        <div class="nav-item-content" id="nav-content-enterprise-features">
+                            <div class="nav-subitem"><a href="/docs/sso">SSO integration</a></div>
+                            <div class="nav-subitem"><a href="/docs/roles">Role management</a></div>
+                            <div class="nav-subitem"><a href="/docs/audit">Audit logs</a></div>
+                            <div class="nav-subitem"><a href="/docs/compliance">Compliance</a></div>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Help Widget -->
+                <div class="help-widget">
+                    <div class="help-widget-icon">
+                        <span role="img" aria-label="Mail">✉️</span>
+                    </div>
+                    <h3 class="help-widget-title">Need more help?</h3>
+                    <p class="help-widget-description">
+                        Expertly trained agents answering questions and providing solutions to the most complex problems.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="documentation-main">
+            <button class="mobile-sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            
+            <div class="main-content">
+                <!-- Content Header -->
+                <div class="content-header" style="display: flex; align-items: flex-start; justify-content: space-between; gap: var(--spacing-xl); flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h1 class="content-title">Find the help you need for any problem</h1>
+                    </div>
+                    
+                    <div class="content-search">
+                        <form class="content-search-form">
+                            <input type="search" class="content-search-input" placeholder="Search for answers..." aria-label="Search for help articles" />
+                            <button type="submit" class="content-search-button">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Content Categories -->
+                <div class="content-categories">
+                    <a href="/docs/getting-started" class="category-card" style="text-decoration: none; color: inherit;">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <span role="img" aria-hidden="true">🚀</span>
+                            </div>
+                            <div class="category-content">
+                                <h2 class="category-title">Getting started</h2>
+                                <p class="category-description">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor velit esse cillum doloreincididunt ut labore et dolore magna.</p>
+                                <div class="category-link">
+                                    <span>Browse docs</span>
+                                    <span class="category-link-arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/docs/authentication" class="category-card" style="text-decoration: none; color: inherit;">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <span role="img" aria-hidden="true">👤</span>
+                            </div>
+                            <div class="category-content">
+                                <h2 class="category-title">Authentication</h2>
+                                <p class="category-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt ut labore et dolore.</p>
+                                <div class="category-link">
+                                    <span>Browse docs</span>
+                                    <span class="category-link-arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/docs/limits-pricing" class="category-card" style="text-decoration: none; color: inherit;">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <span role="img" aria-hidden="true">📊</span>
+                            </div>
+                            <div class="category-content">
+                                <h2 class="category-title">Limits & pricing</h2>
+                                <p class="category-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum quis nostrud exercitation commodo con.</p>
+                                <div class="category-link">
+                                    <span>Browse docs</span>
+                                    <span class="category-link-arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Documentation</h4>
+                <a href="/docs">Get Started</a>
+                <a href="/guides">Guides</a>
+                <a href="/api">API Reference</a>
+                <a href="/examples">Examples</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="/contact">Contact Us</a>
+                <a href="/community">Community</a>
+                <a href="/submit-ticket">Submit Ticket</a>
+                <a href="/status">System Status</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="/about">About Us</a>
+                <a href="/careers">Careers</a>
+                <a href="/blog">Blog</a>
+                <a href="/press">Press</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/cookies">Cookie Policy</a>
+                <a href="/security">Security</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 KnowledgeHub X. All rights reserved. Built with ❤️ for better documentation experiences.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation toggle functionality
+        function toggleNavItem(itemId) {
+            const toggle = document.querySelector(`button[onclick="toggleNavItem('${itemId}')"]`);
+            const content = document.getElementById(`nav-content-${itemId}`);
+            
+            if (toggle && content) {
+                const isExpanded = toggle.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    toggle.classList.remove('expanded');
+                    content.classList.remove('expanded');
+                } else {
+                    toggle.classList.add('expanded');
+                    content.classList.add('expanded');
+                }
+            }
+        }
+
+        // Mobile sidebar toggle
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.documentation-sidebar');
+            if (sidebar) {
+                sidebar.classList.toggle('mobile-open');
+            }
+        }
+
+        // Dropdown toggle
+        function toggleDropdown() {
+            // Simple dropdown toggle for demo
+            console.log('Dropdown toggled');
+        }
+
+        // Close mobile sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.documentation-sidebar');
+            const toggleButton = document.querySelector('.mobile-sidebar-toggle');
+            
+            if (sidebar && toggleButton && 
+                !sidebar.contains(event.target) && 
+                !toggleButton.contains(event.target) && 
+                sidebar.classList.contains('mobile-open')) {
+                sidebar.classList.remove('mobile-open');
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base - Demo Gallery</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f3f4f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --background-primary: #fbfbfb;
+            --background-secondary: #f9fafb;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            --spacing-4xl: 5rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            --border-radius-sm: 0.25rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 0.75rem;
+            --border-radius-xl: 1rem;
+            --border-radius-2xl: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(160deg, #223153 20%, #4B52F5 100%);
+            color: white;
+            padding: var(--spacing-4xl) 0;
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+        }
+
+        .header h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .header p {
+            font-size: var(--font-size-xl);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Introduction */
+        .intro {
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+        }
+
+        .intro h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .intro p {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Theme Grid */
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-4xl);
+        }
+
+        .theme-card {
+            background: rgb(255, 255, 255);
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-header {
+            padding: var(--spacing-xl);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .theme-title {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .theme-description {
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+        }
+
+        .theme-preview {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-4xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .theme-preview-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .theme-icon {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .theme-subtitle {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-medium);
+            color: var(--text-primary);
+        }
+
+        /* Theme-specific colors */
+        .theme-professional .theme-preview {
+            background: linear-gradient(135deg, #1f4e79 0%, #2c5a8a 100%);
+            color: white;
+        }
+
+        .theme-professional .theme-preview::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M20 20h60v60H20z" fill="white" opacity="0.1"/></svg>');
+        }
+
+        .theme-minimalist .theme-preview {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #1a1a1a;
+        }
+
+        .theme-minimalist .theme-preview::before {
+            background: linear-gradient(45deg, transparent 40%, rgba(26, 26, 26, 0.05) 50%, transparent 60%);
+        }
+
+        .theme-warm .theme-preview {
+            background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+            color: white;
+        }
+
+        .theme-warm .theme-preview::before {
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+        }
+
+        .theme-accessible .theme-preview {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
+            border: 3px solid white;
+        }
+
+        .theme-accessible .theme-preview::before {
+            background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 20px);
+        }
+
+        .theme-creative .theme-preview {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+            color: white;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .theme-creative .theme-preview::before {
+            background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+                       radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+        }
+
+        .theme-webflow .theme-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .theme-webflow .theme-preview::before {
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
+        }
+
+        .theme-studious .theme-preview {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3182ce 100%);
+            color: white;
+        }
+
+        .theme-studious .theme-preview::before {
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 20px,
+                rgba(255, 255, 255, 0.05) 20px,
+                rgba(255, 255, 255, 0.05) 40px
+            );
+        }
+
+        .theme-gwinnett .theme-preview {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+        }
+
+        .theme-gwinnett .theme-preview::before {
+            background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+                       linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
+        }
+
+        .theme-gwinnett-alt .theme-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+
+        .theme-gwinnett-alt .theme-preview::before {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, transparent 30%, transparent 70%, rgba(255, 255, 255, 0.1) 100%);
+        }
+
+        /* Thumbnail Image Styles */
+        .theme-preview img {
+            border-radius: 0;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+        
+        .theme-card:hover .theme-preview img {
+            transform: scale(1.05);
+        }
+        
+        /* Remove background styles when using images */
+        .theme-card .theme-preview {
+            background: none !important;
+        }
+        
+        .theme-card .theme-preview::before {
+            display: none;
+        }
+
+        .theme-features {
+            padding: var(--spacing-xl);
+        }
+
+        .theme-features h3 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-list li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #10b981;
+            margin-right: var(--spacing-sm);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .theme-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: var(--font-size-sm);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: #f3f4f6;
+            border-color: #d1d5db;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--background-secondary);
+            padding: var(--spacing-4xl) 0;
+            margin-top: var(--spacing-4xl);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: var(--font-size-4xl);
+            }
+            
+            .theme-actions {
+                flex-direction: column;
+            }
+        }
+
+        /* Animation for cards */
+        .theme-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .theme-card:nth-child(1) { animation-delay: 0.1s; }
+        .theme-card:nth-child(2) { animation-delay: 0.2s; }
+        .theme-card:nth-child(3) { animation-delay: 0.3s; }
+        .theme-card:nth-child(4) { animation-delay: 0.4s; }
+        .theme-card:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Knowledge Base Theme Library</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Themes Grid -->
+        <section class="themes-grid">
+            <!-- Bare Bones Theme -->
+            <div class="theme-card theme-minimalist">
+                <div class="theme-header">
+                    <h3 class="theme-title">Bare Bones 🦴</h3>
+                    <p class="theme-description">A clean, modern minimalist theme focusing on simplicity, generous white space, and minimal visual elements. Perfect for modern brands that value clarity and simplicity.</p>
+                </div>
+                <div class="theme-preview">
+                    <img src="thumbnails/theme2-modern-minimalist.png" alt="Bare Bones Theme Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="theme-features">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>Generous white space</li>
+                        <li>Minimal visual elements</li>
+                        <li>Modern typography</li>
+                        <li>Clean, uncluttered layout</li>
+                        <li>High contrast for readability</li>
+                    </ul>
+                    <div class="theme-actions">
+                        <a href="theme2-modern-minimalist/index.html" class="btn btn-secondary">
+                            Live Preview 🚀
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Knowledge Base Theme -->
+            <div class="theme-card theme-professional">
+                <div class="theme-header">
+                    <h3 class="theme-title">Profesh</h3>
+                    <p class="theme-description">A clean, professional theme inspired by premium help center templates. Features modern card layouts, prominent search functionality, and enterprise-grade aesthetics.</p>
+                </div>
+                <div class="theme-preview">
+                    <img src="thumbnails/theme6-professional-knowledge-base.png" alt="Profesh Theme Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="theme-features">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>Professional card-based layouts</li>
+                        <li>Advanced search functionality</li>
+                        <li>Clean, modern typography</li>
+                        <li>Enterprise color scheme</li>
+                        <li>WCAG accessibility compliant</li>
+                    </ul>
+                    <div class="theme-actions">
+                        <a href="theme6-professional-knowledge-base/index.html" class="btn btn-secondary">
+                            Live Preview 🚀
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Webflow Help Center Theme -->
+            <div class="theme-card theme-webflow">
+                <div class="theme-header">
+                    <h3 class="theme-title">Mr. Frosty</h3>
+                    <p class="theme-description">A clean, modern help center theme inspired by premium Webflow templates. Features minimal design, prominent search functionality, and intuitive category navigation.</p>
+                </div>
+                <div class="theme-preview">
+                    <img src="thumbnails/theme7-mr-frosty.png" alt="Mr. Frosty Theme Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="theme-features">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>Clean, minimal design aesthetic</li>
+                        <li>Large hero section with search</li>
+                        <li>Interactive category cards</li>
+                        <li>Professional typography (Inter)</li>
+                        <li>Smooth hover animations</li>
+                    </ul>
+                    <div class="theme-actions">
+                        <a href="theme7-mr-frosty/index.html" class="btn btn-secondary">
+                            Live Preview 🚀
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Studious Theme -->
+            <div class="theme-card theme-studious">
+                <div class="theme-header">
+                    <h3 class="theme-title">Studious</h3>
+                    <p class="theme-description">A clean, professional knowledge base theme inspired by modern educational platforms. Features prominent search functionality, organized categories, and academic-friendly design.</p>
+                </div>
+                <div class="theme-preview">
+                    <img src="thumbnails/theme8-studious.png" alt="Studious Theme Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="theme-features">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>Academic-inspired professional design</li>
+                        <li>Prominent "You ask. We answer." hero</li>
+                        <li>6-category organized grid layout</li>
+                        <li>Popular articles with categorization</li>
+                        <li>Video demo integration section</li>
+                        <li>WCAG accessibility compliant</li>
+                        <li>Inter typography for readability</li>
+                        <li>Responsive across all devices</li>
+                    </ul>
+                    <div class="theme-actions">
+                        <a href="theme8-studious/index.html" class="btn btn-secondary">
+                            Live Preview 🚀
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gwinnett Theme -->
+            <div class="theme-card theme-gwinnett">
+                <div class="theme-header">
+                    <h3 class="theme-title">Gwinnett</h3>
+                    <p class="theme-description">A sophisticated marketing-focused theme featuring modern gradients, premium typography, and full-width layouts. Perfect for brands that want to make a strong visual impact.</p>
+                </div>
+                <div class="theme-preview">
+                    <img src="thumbnails/theme-gwinnett.png" alt="Gwinnett Theme Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="theme-features">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>Modern gradient backgrounds</li>
+                        <li>Premium Inter typography</li>
+                        <li>Hero section with search</li>
+                        <li>Category grid layouts</li>
+                        <li>Smooth animations</li>
+                        <li>Professional color palette</li>
+                        <li>Marketing-style design</li>
+                        <li>Responsive & accessible</li>
+                    </ul>
+                    <div class="theme-actions">
+                        <a href="theme-gwinnett/index.html" class="btn btn-secondary">
+                            Live Preview 🚀
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gwinnett Alt Theme -->
+            <div class="theme-card theme-gwinnett-alt">
+                <div class="theme-header">
+                    <h3 class="theme-title">Gwinnett Alt</h3>
+                    <p class="theme-description">A documentation-focused variant of Gwinnett with fixed sidebar navigation, expandable categories, and two-column layout. Ideal for comprehensive knowledge bases.</p>
+                </div>
+                <div class="theme-preview">
+                    <img src="thumbnails/theme-gwinnett-alt.png" alt="Gwinnett Alt Theme Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="theme-features">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>Fixed sidebar navigation</li>
+                        <li>Expandable category tree</li>
+                        <li>Two-column layout</li>
+                        <li>KnowledgeHub X branding</li>
+                        <li>Search integration</li>
+                        <li>Help widget</li>
+                        <li>Mobile responsive</li>
+                        <li>Documentation-optimized</li>
+                    </ul>
+                    <div class="theme-actions">
+                        <a href="theme-gwinnett-alt/index.html" class="btn btn-secondary">
+                            Live Preview 🚀
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Add some interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for demo links
+            const demoLinks = document.querySelectorAll('.btn');
+            
+            demoLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Add a brief loading state
+                    const originalText = this.innerHTML;
+                    this.innerHTML = 'Loading...';
+                    this.style.opacity = '0.7';
+                    
+                    // Reset after a brief moment (for demo purposes)
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.opacity = '1';
+                    }, 500);
+                });
+            });
+            
+            // Add hover effects for theme cards
+            const themeCards = document.querySelectorAll('.theme-card');
+            
+            themeCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                    this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.2)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                });
+            });
+            
+            // Add theme selection tracking (for demo purposes)
+            const primaryButtons = document.querySelectorAll('.btn-primary');
+            
+            primaryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const themeName = this.closest('.theme-card').querySelector('.theme-title').textContent;
+                    console.log(`Theme demo viewed: ${themeName}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
